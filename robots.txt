@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roedentaler-horrorhaus.de/sitemap.xml

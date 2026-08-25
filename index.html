@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rödentaler Horrorhaus — Halloween in Rödental bei Coburg</title>
+<meta name="description" content="Ein Vorgarten in Rödental-Einberg. Einmal im Jahr. Eintritt frei. Alle Termine, Bilder und Infos zum Rödentaler Horrorhaus der Familie Müller.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://roedentaler-horrorhaus.de/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Rödentaler Horrorhaus">
+<meta property="og:title" content="Rödentaler Horrorhaus — Traust du dich?">
+<meta property="og:description" content="Ein Vorgarten in Rödental-Einberg. Einmal im Jahr. Eintritt kostet nichts. Nerven schon.">
+<meta property="og:url" content="https://roedentaler-horrorhaus.de/">
+<meta property="og:image" content="https://roedentaler-horrorhaus.de/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rödentaler Horrorhaus — Traust du dich?">
+<meta name="twitter:description" content="Ein Vorgarten in Rödental-Einberg. Einmal im Jahr. Eintritt frei.">
+<meta name="twitter:image" content="https://roedentaler-horrorhaus.de/images/og-image.jpg">
+<meta name="theme-color" content="#000000">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M16 5c-5 0-9 4-9 9v8l3-2 3 2 3-2 3 2 3-2 3 2v-8c0-5-4-9-9-9z' fill='%237CFF2E'/%3E%3Ccircle cx='12' cy='14' r='2' fill='%23000'/%3E%3Ccircle cx='20' cy='14' r='2' fill='%23000'/%3E%3C/svg%3E">
+
+<!-- HINWEIS FÜR DEN LIVEGANG: Schriften vor der Veröffentlichung lokal hosten (DSGVO).
+     Dateien von fonts.google.com herunterladen, nach /fonts/ legen und hier per @font-face einbinden. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Nosifer&family=Special+Elite&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TouristAttraction",
+      "@id": "https://roedentaler-horrorhaus.de/#attraktion",
+      "name": "Rödentaler Horrorhaus",
+      "description": "Privat gestalteter Halloween-Parcours im Vorgarten einer Familie in Rödental-Einberg. Jeden Oktober geöffnet, Eintritt frei.",
+      "url": "https://roedentaler-horrorhaus.de/",
+      "image": "https://roedentaler-horrorhaus.de/images/og-image.jpg",
+      "isAccessibleForFree": true,
+      "publicAccess": true,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "PLATZHALTER Straße und Hausnummer",
+        "addressLocality": "Rödental",
+        "addressRegion": "Bayern",
+        "postalCode": "96472",
+        "addressCountry": "DE"
+      },
+      "sameAs": ["https://www.instagram.com/roedentaler_horrorhaus/"]
+    },
+    {
+      "@type": "Event",
+      "name": "Halloween-Nacht im Rödentaler Horrorhaus",
+      "startDate": "2026-10-31T18:00",
+      "endDate": "2026-10-31T22:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": { "@id": "https://roedentaler-horrorhaus.de/#attraktion" },
+      "image": "https://roedentaler-horrorhaus.de/images/og-image.jpg",
+      "description": "Die große Nacht: Der komplette Rundgang ist geöffnet, Familie Müller empfängt in Kostüm.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://roedentaler-horrorhaus.de/#termine",
+        "validFrom": "2026-09-01T00:00"
+      },
+      "organizer": { "@type": "Organization", "name": "Rödentaler Horrorhaus", "url": "https://roedentaler-horrorhaus.de/" }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   RÖDENTALER HORRORHAUS — Design-System
+   ============================================================ */
+:root{
+  --void:#000000;
+  --soil:#0A0D08;
+  --slime:#7CFF2E;
+  --moss:#2F5C18;
+  --blood:#8B0F0F;
+  --bone:#EDEDE6;
+  --fog:#8A9186;          /* auf AA-Kontrast angehoben */
+  --fog-dim:#6B7268;      /* nur für Linien und Deko */
+
+  --f-display:'Nosifer', 'Impact', fantasy;
+  --f-head:'Anton', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --f-body:'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-type:'Special Elite', 'Courier New', monospace;
+
+  --pad:clamp(1.25rem, 4vw, 3rem);
+  --sec:clamp(4.5rem, 10vw, 9rem);
+  --maxw:1200px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--void); color:var(--bone);
+  font-family:var(--f-body); font-size:1.0625rem; line-height:1.7;
+  overflow-x:hidden; font-synthesis:none;
+}
+img{max-width:100%; display:block}
+a{color:var(--slime); text-decoration:none}
+a:hover{text-decoration:underline; text-underline-offset:.25em}
+:focus-visible{outline:2px solid var(--slime); outline-offset:3px; border-radius:2px}
+::selection{background:var(--slime); color:#000}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
+.section{padding-block:var(--sec); position:relative}
+.section--soil{background:var(--soil)}
+
+/* ---------- Typografie ---------- */
+h1,h2,h3,h4{margin:0; font-weight:400}
+.h-display{
+  font-family:var(--f-display); color:var(--slime);
+  font-size:clamp(1.6rem,5vw,4.4rem); line-height:1.06;
+  letter-spacing:.005em; text-wrap:balance;
+  text-shadow:0 4px 0 var(--moss), 0 0 42px rgba(124,255,46,.28);
+}
+.h2{
+  font-family:var(--f-head); text-transform:uppercase;
+  font-size:clamp(2rem,5vw,4.2rem); line-height:.95; letter-spacing:.02em;
+  text-wrap:balance;
+}
+.h3{
+  font-family:var(--f-head); text-transform:uppercase;
+  font-size:clamp(1.25rem,2.2vw,1.8rem); line-height:1.05; letter-spacing:.02em;
+}
+.eyebrow{
+  font-family:var(--f-type); font-size:.8125rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--slime); margin:0 0 1rem;
+}
+.lead{font-size:clamp(1.1rem,1.6vw,1.3rem); color:var(--bone)}
+p{margin:0 0 1.15em; max-width:68ch}
+.muted{color:var(--fog)}
+.type{font-family:var(--f-type)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-family:var(--f-head); text-transform:uppercase; letter-spacing:.04em;
+  font-size:.9375rem; padding:.95rem 1.6rem; border:1px solid var(--slime);
+  background:var(--slime); color:#000; cursor:pointer;
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
+}
+.btn:hover{text-decoration:none; transform:translateY(-2px); box-shadow:0 8px 0 -2px var(--moss), 0 0 34px rgba(124,255,46,.35)}
+.btn--ghost{background:transparent; color:var(--slime)}
+.btn--ghost:hover{background:rgba(124,255,46,.1)}
+
+/* ---------- Atmosphäre ---------- */
+#grain{position:fixed; inset:0; width:100%; height:100%; z-index:9000; pointer-events:none; opacity:.045; mix-blend-mode:screen}
+.fog{position:absolute; inset:-20% -10%; pointer-events:none; z-index:0; overflow:hidden}
+.fog span{
+  position:absolute; width:70vw; height:70vw; border-radius:50%;
+  background:radial-gradient(circle, rgba(47,92,24,.30) 0%, rgba(47,92,24,0) 68%);
+  filter:blur(24px); animation:drift 44s ease-in-out infinite alternate;
+}
+.fog span:nth-child(2){left:52%; top:22%; animation-duration:58s; animation-direction:alternate-reverse; opacity:.7}
+@keyframes drift{
+  0%{transform:translate3d(-8%,4%,0) scale(1)}
+  100%{transform:translate3d(14%,-8%,0) scale(1.18)}
+}
+.web{position:absolute; width:170px; height:170px; opacity:.15; pointer-events:none; color:var(--fog-dim)}
+.web--tl{top:0; left:0}
+.web--br{bottom:0; right:0; transform:scale(-1,-1)}
+.drip{display:block; width:100%; height:38px; color:var(--slime)}
+.drip--moss{color:var(--moss)}
+
+/* ---------- Bild-Platzhalter ---------- */
+.ph{
+  position:relative; width:100%; background:#050705;
+  border:1px dashed var(--moss); display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:.35rem; text-align:center;
+  padding:1rem; overflow:hidden;
+}
+.ph::after{
+  content:''; position:absolute; inset:0;
+  background:repeating-linear-gradient(45deg, rgba(47,92,24,.055) 0 12px, transparent 12px 24px);
+  pointer-events:none;
+}
+.ph b{font-family:var(--f-type); font-weight:400; font-size:.8125rem; color:var(--slime); letter-spacing:.04em; word-break:break-all}
+.ph i{font-style:normal; font-family:var(--f-type); font-size:.6875rem; color:var(--fog-dim); letter-spacing:.1em}
+.r-16-9{aspect-ratio:16/9}
+.r-3-2{aspect-ratio:3/2}
+.r-4-5{aspect-ratio:4/5}
+.r-1-1{aspect-ratio:1/1}
+
+/* ---------- Navigation ---------- */
+.nav{position:fixed; inset:0 0 auto; z-index:1000; transition:background .3s var(--ease), border-color .3s var(--ease); border-bottom:1px solid transparent}
+.nav.is-stuck{background:rgba(10,13,8,.92); backdrop-filter:blur(10px); border-bottom-color:var(--moss)}
+.nav__inner{max-width:var(--maxw); margin-inline:auto; padding:.85rem var(--pad); display:flex; align-items:center; gap:1.5rem}
+.nav__brand{font-family:var(--f-display); color:var(--slime); font-size:.95rem; letter-spacing:.01em; line-height:1.2; flex:0 0 auto}
+.nav__brand:hover{text-decoration:none}
+.nav__links{display:flex; gap:1.5rem; margin-left:auto; align-items:center}
+.nav__links a{
+  font-family:var(--f-head); text-transform:uppercase; font-size:.8125rem;
+  letter-spacing:.08em; color:var(--bone); position:relative; padding-block:.3rem;
+}
+.nav__links a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--slime); transition:width .25s var(--ease)}
+.nav__links a:hover{color:var(--slime); text-decoration:none}
+.nav__links a:hover::after{width:100%}
+.nav .btn{padding:.6rem 1.05rem; font-size:.8125rem}
+.nav__burger{display:none; margin-left:auto; background:none; border:1px solid var(--moss); color:var(--slime); padding:.6rem .8rem; cursor:pointer; font-family:var(--f-type); font-size:.75rem; letter-spacing:.12em}
+.nav__panel{
+  position:fixed; inset:0; background:var(--void); z-index:999; display:none;
+  flex-direction:column; align-items:center; justify-content:center; gap:1.1rem;
+}
+.nav__panel.is-open{display:flex}
+.nav__panel a{font-family:var(--f-head); text-transform:uppercase; font-size:clamp(1.6rem,7vw,2.4rem); color:var(--bone); letter-spacing:.02em}
+.nav__panel a:hover{color:var(--slime); text-decoration:none}
+.nav__panel .btn{margin-top:1rem; color:#000}
+.skip{position:absolute; left:-9999px; top:0; z-index:10000; background:var(--slime); color:#000; padding:.8rem 1.2rem; font-family:var(--f-head)}
+.skip:focus{left:.5rem; top:.5rem}
+@media (max-width:900px){
+  .nav__links{display:none}
+  .nav>.nav__inner>.btn{display:none}
+  .nav__burger{display:block}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; padding-block:7rem 4rem}
+.hero__bg{position:absolute; inset:0; z-index:0}
+.hero__bg .ph{height:100%; border:0; background:#040604; align-items:flex-start; justify-content:flex-end; padding:2rem; opacity:.45}
+.hero__bg::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.55) 42%, #000 96%)}
+.hero__inner{position:relative; z-index:2; text-align:center; width:100%}
+.hero__sub{font-family:var(--f-head); text-transform:uppercase; font-size:clamp(1.3rem,3.6vw,2.6rem); letter-spacing:.03em; margin:1.4rem 0 .4rem; line-height:1}
+.hero__dare{font-family:var(--f-type); font-size:clamp(1rem,2vw,1.35rem); color:var(--fog); letter-spacing:.06em}
+.flicker{animation:flick .45s steps(2,end) 1}
+@keyframes flick{0%{opacity:.1}20%{opacity:1}35%{opacity:.15}55%{opacity:1}70%{opacity:.35}100%{opacity:1}}
+.hero__cta{display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-top:2.4rem}
+
+/* ---------- Countdown ---------- */
+.count{display:flex; gap:clamp(.6rem,2.4vw,2rem); justify-content:center; margin-top:2.6rem; flex-wrap:wrap}
+.count__u{min-width:clamp(66px,15vw,124px)}
+.count__n{
+  font-family:var(--f-head); font-size:clamp(2.4rem,7vw,5rem); line-height:.9;
+  color:var(--bone); font-variant-numeric:tabular-nums;
+}
+.count__u--s .count__n{color:var(--blood)}
+.count__l{font-family:var(--f-type); font-size:.6875rem; letter-spacing:.2em; text-transform:uppercase; color:var(--fog); margin-top:.5rem}
+.count__note{font-family:var(--f-type); font-size:.8125rem; color:var(--fog); margin-top:1.4rem; letter-spacing:.05em}
+
+/* ---------- Info-Leiste ---------- */
+.bar{background:var(--soil); border-block:1px solid var(--moss)}
+.bar__inner{display:flex; justify-content:center; gap:clamp(1rem,5vw,4.5rem); padding:1.4rem var(--pad); flex-wrap:wrap; max-width:var(--maxw); margin-inline:auto}
+.bar__i{display:flex; align-items:center; gap:.65rem; font-family:var(--f-head); text-transform:uppercase; letter-spacing:.06em; font-size:.9375rem}
+.bar__i svg{width:20px; height:20px; color:var(--slime); flex:0 0 auto}
+
+/* ---------- Zwei-Spalten ---------- */
+.cols{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+@media (max-width:860px){.cols{grid-template-columns:1fr}}
+.quote{
+  font-family:var(--f-head); text-transform:uppercase; line-height:1.05;
+  font-size:clamp(1.35rem,2.6vw,2.1rem); border-left:3px solid var(--slime);
+  padding-left:1.25rem; margin:2rem 0 0; max-width:22ch;
+}
+.quote span{color:var(--slime)}
+
+/* ---------- Rundgang ---------- */
+.walk{position:relative}
+.walk .wrap{position:relative}
+.walk__line{position:absolute; left:var(--pad); top:0; bottom:0; width:44px; pointer-events:none; z-index:1}
+.walk__line svg{height:100%; width:100%; overflow:visible}
+.walk__path{fill:none; stroke:var(--moss); stroke-width:1.5}
+.walk__prog{fill:none; stroke:var(--slime); stroke-width:1.5; stroke-dasharray:4000; stroke-dashoffset:4000; filter:drop-shadow(0 0 6px rgba(124,255,46,.6))}
+.stations{position:relative; z-index:2; display:flex; flex-direction:column; gap:clamp(3rem,7vw,6rem); margin-left:clamp(2.6rem,6vw,5.2rem)}
+.walk__intro{margin-left:clamp(2.6rem,6vw,5.2rem); position:relative; z-index:2}
+.st{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,3.5rem); align-items:center; position:relative}
+.st:nth-child(even) .st__media{order:-1}
+.st__media .ph{max-width:400px; margin-inline:auto}
+.st__num{font-family:var(--f-type); color:var(--slime); font-size:.8125rem; letter-spacing:.2em; display:block; margin-bottom:.55rem}
+.st__t{margin-bottom:.7rem}
+.st__dot{
+  position:absolute; left:calc(22px - clamp(2.6rem,6vw,5.2rem)); top:.5rem;
+  width:11px; height:11px; border-radius:50%; background:var(--soil); border:1.5px solid var(--moss);
+  transition:background .3s var(--ease), border-color .3s var(--ease);
+}
+.st.is-active .st__dot{background:var(--slime); border-color:var(--slime); animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(124,255,46,.55)}50%{box-shadow:0 0 0 9px rgba(124,255,46,0)}}
+.walk__end{font-family:var(--f-type); color:var(--fog); text-align:center; margin-top:clamp(3rem,7vw,5rem); letter-spacing:.05em; font-size:1.05rem}
+@media (max-width:760px){
+  .st{grid-template-columns:1fr; gap:1.2rem}
+  .st:nth-child(even) .st__media{order:0}
+  .walk__line{left:var(--pad); width:14px}
+  .walk__path,.walk__prog{stroke-width:6}
+  .stations,.walk__intro{margin-left:2.4rem}
+  .st__dot{left:calc(7px - 2.4rem)}
+}
+
+/* ---------- Scroll-Reveal ---------- */
+.rv{opacity:0; transform:translateY(24px); transition:opacity .7s var(--ease), transform .7s var(--ease)}
+.rv.is-in{opacity:1; transform:none}
+
+/* ---------- Termine ---------- */
+.dates{display:grid; grid-template-columns:repeat(auto-fill,minmax(255px,1fr)); gap:1.1rem; margin-top:2.5rem}
+.date{border:1px solid var(--moss); background:var(--soil); padding:1.6rem 1.5rem; position:relative}
+.date--hl{border-color:var(--slime); box-shadow:0 0 0 1px var(--slime), 0 0 46px rgba(124,255,46,.16)}
+.date--past{opacity:.34}
+.date__tag{font-family:var(--f-type); font-size:.6875rem; letter-spacing:.18em; text-transform:uppercase; color:var(--slime); display:block; margin-bottom:.7rem}
+.date--past .date__tag{color:var(--fog)}
+.date__d{font-family:var(--f-head); text-transform:uppercase; font-size:1.7rem; line-height:1; letter-spacing:.02em}
+.date__wd{font-family:var(--f-type); color:var(--fog); font-size:.8125rem; margin-top:.3rem; letter-spacing:.05em}
+.date__t{font-family:var(--f-type); color:var(--bone); margin-top:.9rem; font-size:1rem; letter-spacing:.04em}
+.date__n{color:var(--fog); font-size:.9375rem; margin:.7rem 0 0; line-height:1.5}
+.notice{border:1px solid var(--blood); padding:1.35rem 1.5rem; margin-top:2rem; background:rgba(139,15,15,.08)}
+.notice__h{font-family:var(--f-head); text-transform:uppercase; letter-spacing:.04em; color:var(--bone); margin-bottom:.5rem; display:flex; align-items:center; gap:.55rem}
+.notice__h svg{width:19px; height:19px; color:var(--blood)}
+.notice p:last-child{margin-bottom:0}
+
+/* ---------- Galerie ---------- */
+.tabs{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.8rem}
+.tab{
+  font-family:var(--f-type); font-size:.8125rem; letter-spacing:.12em; text-transform:uppercase;
+  background:transparent; border:1px solid var(--moss); color:var(--fog); padding:.5rem 1.1rem; cursor:pointer;
+  transition:color .2s var(--ease), border-color .2s var(--ease);
+}
+.tab:hover{color:var(--bone); border-color:var(--fog)}
+.tab[aria-selected="true"]{color:#000; background:var(--slime); border-color:var(--slime)}
+.gal{position:relative; margin-top:2rem; columns:3; column-gap:1rem}
+@media (max-width:900px){.gal{columns:2}}
+@media (max-width:520px){.gal{columns:1}}
+.gal__i{
+  break-inside:avoid; margin:0 0 1rem; padding:0; border:0; background:none; width:100%;
+  cursor:pointer; display:block; transition:filter .35s var(--ease), transform .35s var(--ease);
+}
+.gal.is-lit .gal__i{filter:brightness(.45)}
+.gal__i:hover,.gal__i:focus-visible{filter:brightness(1) !important; transform:translateY(-3px)}
+.gal__spot{
+  position:absolute; inset:0; pointer-events:none; z-index:3; opacity:0; transition:opacity .4s var(--ease);
+  background:radial-gradient(circle 210px at var(--mx,50%) var(--my,50%), rgba(0,0,0,0) 0%, rgba(0,0,0,.62) 78%);
+}
+.gal.is-lit .gal__spot{opacity:1}
+
+/* ---------- Lightbox ---------- */
+.lb{position:fixed; inset:0; z-index:9500; background:rgba(0,0,0,.96); display:none; align-items:center; justify-content:center; padding:clamp(1rem,5vw,4rem)}
+.lb.is-open{display:flex}
+.lb__stage{max-width:900px; width:100%; display:flex; flex-direction:column; align-items:center}
+.lb .ph{height:min(74svh,760px); width:auto; max-width:100%}
+.lb__cap{font-family:var(--f-type); color:var(--fog); text-align:center; margin-top:1rem; letter-spacing:.06em; font-size:.875rem}
+.lb__btn{position:absolute; background:transparent; border:1px solid var(--moss); color:var(--slime); width:48px; height:48px; cursor:pointer; font-size:1.3rem; line-height:1; display:grid; place-items:center; transition:background .2s var(--ease)}
+.lb__btn:hover{background:rgba(124,255,46,.12)}
+.lb__x{top:clamp(1rem,3vw,2rem); right:clamp(1rem,3vw,2rem)}
+.lb__p{left:clamp(.6rem,2vw,2rem); top:50%; transform:translateY(-50%)}
+.lb__n{right:clamp(.6rem,2vw,2rem); top:50%; transform:translateY(-50%)}
+
+/* ---------- Info-Karten ---------- */
+.duo{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.4rem,3.5vw,2.6rem); margin-top:2.5rem}
+@media (max-width:800px){.duo{grid-template-columns:1fr}}
+.panel{border:1px solid var(--moss); background:var(--soil); padding:clamp(1.5rem,3vw,2.2rem)}
+.panel--warn{border-color:var(--blood); background:rgba(139,15,15,.07)}
+.panel .h3{margin-bottom:1.2rem}
+.list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.85rem}
+.list li{display:flex; gap:.75rem; align-items:flex-start; line-height:1.55}
+.list li::before{content:''; flex:0 0 auto; width:7px; height:7px; margin-top:.62rem; background:var(--slime); transform:rotate(45deg)}
+.panel--warn .list li::before{background:var(--blood)}
+
+/* ---------- Anfahrt ---------- */
+.map{border:1px solid var(--moss); position:relative; overflow:hidden}
+.addr{font-family:var(--f-type); font-size:1.05rem; line-height:1.9; letter-spacing:.04em}
+.addr strong{color:var(--slime); font-weight:400}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:2.5rem; border-top:1px solid var(--moss); max-width:900px}
+.faq__q{
+  width:100%; background:none; border:0; border-bottom:1px solid var(--moss); color:var(--bone);
+  font-family:var(--f-head); text-transform:uppercase; letter-spacing:.02em; font-size:clamp(1rem,1.7vw,1.25rem);
+  text-align:left; padding:1.25rem 3rem 1.25rem 0; cursor:pointer; position:relative; display:block; line-height:1.2;
+  transition:color .2s var(--ease);
+}
+.faq__q:hover{color:var(--slime)}
+.faq__q::after{
+  content:''; position:absolute; right:.4rem; top:50%; width:11px; height:11px;
+  border-right:2px solid var(--slime); border-bottom:2px solid var(--slime);
+  transform:translateY(-70%) rotate(45deg); transition:transform .28s var(--ease);
+}
+.faq__q[aria-expanded="true"]::after{transform:translateY(-25%) rotate(-135deg)}
+.faq__a{overflow:hidden; max-height:0; transition:max-height .35s var(--ease); border-bottom:1px solid var(--moss)}
+.faq__a>div{padding:1.1rem 0 1.6rem}
+.faq__a p{margin:0; color:var(--fog)}
+
+/* ---------- Presse ---------- */
+.press{display:flex; gap:clamp(1.5rem,5vw,4rem); flex-wrap:wrap; align-items:center; margin-top:2rem}
+.press__n{font-family:var(--f-head); text-transform:uppercase; font-size:clamp(1.1rem,2.2vw,1.6rem); color:var(--fog); letter-spacing:.03em; transition:color .2s var(--ease)}
+.press__n:hover{color:var(--bone); text-decoration:none}
+
+/* ---------- Karten-Raster ---------- */
+.trio{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-top:2.5rem}
+.card{border:1px solid var(--moss); background:var(--soil); padding:clamp(1.5rem,3vw,2rem); display:flex; flex-direction:column}
+.card .h3{margin-bottom:.9rem}
+.card p{color:var(--fog); flex:1}
+.card .btn{align-self:flex-start; margin-top:.5rem}
+
+/* ---------- Instagram ---------- */
+.ig{display:grid; grid-template-columns:repeat(6,1fr); gap:.7rem; margin-top:2.5rem}
+@media (max-width:760px){.ig{grid-template-columns:repeat(3,1fr)}}
+.ig__handle{font-family:var(--f-head); text-transform:uppercase; font-size:clamp(1.4rem,3.6vw,2.6rem); color:var(--slime); letter-spacing:.01em; display:inline-block}
+
+/* ---------- Formular ---------- */
+.form{display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:2.5rem; max-width:760px}
+.field{display:flex; flex-direction:column; gap:.45rem}
+.field--full{grid-column:1/-1}
+@media (max-width:640px){.form{grid-template-columns:1fr} .field{grid-column:1/-1}}
+.field label{font-family:var(--f-type); font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--fog)}
+.field input,.field select,.field textarea{
+  background:#050705; border:1px solid var(--moss); color:var(--bone); padding:.85rem 1rem;
+  font-family:var(--f-body); font-size:1rem; width:100%; transition:border-color .2s var(--ease);
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--slime); outline:none}
+.field textarea{min-height:150px; resize:vertical}
+.field .err{font-family:var(--f-type); font-size:.75rem; color:var(--blood); letter-spacing:.05em; min-height:1rem}
+.field.is-bad input,.field.is-bad select,.field.is-bad textarea{border-color:var(--blood)}
+.toast{
+  position:fixed; left:50%; bottom:2rem; transform:translate(-50%,140%); z-index:9600;
+  opacity:0; visibility:hidden; pointer-events:none;
+  background:var(--slime); color:#000; font-family:var(--f-head); text-transform:uppercase;
+  letter-spacing:.03em; padding:1rem 1.6rem; transition:transform .4s var(--ease); max-width:90vw; text-align:center;
+}
+.toast.is-on{transform:translate(-50%,0); opacity:1; visibility:visible}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--soil); border-top:1px solid var(--moss); padding-block:clamp(3rem,6vw,4.5rem) 2rem}
+.foot__grid{display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap}
+.foot__nav{display:flex; flex-direction:column; gap:.6rem}
+.foot__nav a{color:var(--bone); font-family:var(--f-body); font-size:.9375rem}
+.foot__nav a:hover{color:var(--slime)}
+.foot__bar{
+  border-top:1px solid var(--moss); margin-top:2.5rem; padding-top:1.5rem;
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  font-family:var(--f-type); font-size:.75rem; color:var(--fog); letter-spacing:.06em;
+}
+.foot__ttl{font-family:var(--f-display); color:var(--slime); font-size:1.1rem; line-height:1.3; margin-bottom:.9rem}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+  .rv{opacity:1; transform:none}
+  .gal.is-lit .gal__i{filter:none}
+  .gal__spot{display:none}
+  #grain{display:none}
+  .fog{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<svg id="grain" aria-hidden="true"><filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#gr)"/></svg>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">Rödentaler<br>Horrorhaus</a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <a href="#rundgang">Rundgang</a>
+      <a href="#termine">Termine</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#infos">Besucherinfos</a>
+      <a href="#anfahrt">Anfahrt</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="#termine">Traust du dich?</a>
+    <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="navpanel">Menü</button>
+  </div>
+</header>
+<div class="nav__panel" id="navpanel">
+  <a href="#rundgang">Rundgang</a>
+  <a href="#termine">Termine</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#infos">Besucherinfos</a>
+  <a href="#anfahrt">Anfahrt</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn" href="#termine">Traust du dich?</a>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__bg">
+    <div class="ph" role="img" aria-label="Das komplette Haus bei Nacht, grün beleuchtet, mit der Halloween-Dekoration im Vorgarten">
+      <b>hero-haus-nacht.jpg</b><i>16:9</i>
+    </div>
+  </div>
+  <div class="fog" aria-hidden="true"><span></span><span></span></div>
+  <div class="hero__inner wrap">
+    <h1 class="h-display flicker">Rödentaler Horrorhaus</h1>
+    <p class="hero__sub">Wir sehen uns im Oktober</p>
+    <p class="hero__dare">Traust du dich…?</p>
+
+    <div class="count" id="count" role="timer" aria-live="off" aria-label="Countdown bis zur Halloween-Nacht">
+      <div class="count__u"><div class="count__n" id="c-d">--</div><div class="count__l">Tage</div></div>
+      <div class="count__u"><div class="count__n" id="c-h">--</div><div class="count__l">Stunden</div></div>
+      <div class="count__u"><div class="count__n" id="c-m">--</div><div class="count__l">Minuten</div></div>
+      <div class="count__u count__u--s"><div class="count__n" id="c-s">--</div><div class="count__l">Sekunden</div></div>
+    </div>
+    <p class="count__note" id="c-note">bis zur Halloween-Nacht</p>
+
+    <div class="hero__cta">
+      <a class="btn" href="#termine">Termine ansehen</a>
+      <a class="btn btn--ghost" href="#anfahrt">Anfahrt &amp; Parken</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INFO-LEISTE ================= -->
+<section class="bar" aria-label="Kurzinfos">
+  <div class="bar__inner">
+    <div class="bar__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h6M9 14h6"/></svg>Eintritt frei</div>
+    <div class="bar__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Rödental-Einberg</div>
+    <div class="bar__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Jeden Oktober</div>
+  </div>
+</section>
+
+<!-- ================= GESCHICHTE ================= -->
+<section class="section" id="geschichte">
+  <svg class="web web--tl" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width=".6">
+    <path d="M0 0 L100 100 M0 0 L100 55 M0 0 L55 100 M0 0 L100 22 M0 0 L22 100"/>
+    <path d="M22 5 Q34 18 40 32 M38 9 Q52 26 58 46 M55 14 Q70 34 76 62 M72 20 Q88 44 92 78"/>
+  </svg>
+  <div class="wrap">
+    <div class="cols">
+      <div class="rv">
+        <p class="eyebrow">Die Geschichte</p>
+        <h2 class="h2">Angefangen hat alles<br>mit einem Kind</h2>
+        <p class="lead" style="margin-top:1.6rem">Tom wollte zu Halloween etwas Gruseliges bauen. Ein paar Spinnweben, ein Skelett, mehr war nicht geplant.</p>
+        <p class="muted">Daraus ist ein Projekt geworden, an dem Vater und Sohn das halbe Jahr basteln. Jedes Jahr kommt etwas dazu — eine Figur, ein Effekt, eine neue Ecke im Garten. Seit die Zeitung das erste Mal darüber geschrieben hat, stehen im Oktober Leute aus dem ganzen Landkreis vor dem Zaun.</p>
+        <p class="muted">Das Horrorhaus ist kein Freizeitpark. Es ist ein Vorgarten in Einberg, in den eine Familie sehr viel Zeit steckt. Deshalb kostet es nichts, deshalb gibt es keine Tickets, und deshalb ist es jedes Jahr anders.</p>
+        <blockquote class="quote"><span>„</span>Wir bauen das ganze Jahr. Für vier Abende.<span>“</span></blockquote>
+      </div>
+      <div class="rv">
+        <div class="ph r-3-2" role="img" aria-label="Christian und Tom Müller im Kostüm vor der beleuchteten Kulisse ihres Hauses">
+          <b>familie-mueller.jpg</b><i>3:2</i>
+        </div>
+        <p class="type muted" style="font-size:.8125rem; margin-top:.8rem; letter-spacing:.05em">Christian und Tom Müller vor der Kulisse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="drip" viewBox="0 0 1200 38" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1200v9c-18 0-22 12-33 12s-14-12-31-12-19 20-32 20-15-20-30-20-21 8-34 8-17-8-31-8-20 15-33 15-16-15-31-15-22 10-35 10-18-10-32-10-19 17-32 17-16-17-31-17-21 7-34 7-18-7-32-7-20 13-33 13-16-13-31-13-22 9-35 9-18-9-32-9-19 14-32 14-16-14-31-14-21 6-34 6-18-6-32-6-20 11-33 11-16-11-31-11-22 8-35 8-18-8-32-8-19 16-32 16-16-16-31-16-21 5-34 5-18-5-32-5-20 10-33 10-16-10-31-10-22 7-35 7-18-7-32-7-19 12-32 12-16-12-31-12-21 4-34 4-18-4-32-4V0z"/></svg>
+
+<!-- ================= RUNDGANG ================= -->
+<section class="section section--soil walk" id="rundgang">
+  <div class="wrap">
+    <div class="walk__line" id="walkline" aria-hidden="true">
+      <svg viewBox="0 0 44 1000" preserveAspectRatio="none">
+        <path class="walk__path" id="wpath" d="M22 0 C14 90 30 150 20 240 C10 330 32 400 22 500 C12 600 30 660 20 750 C12 840 28 910 22 1000"/>
+        <path class="walk__prog" id="wprog" d="M22 0 C14 90 30 150 20 240 C10 330 32 400 22 500 C12 600 30 660 20 750 C12 840 28 910 22 1000"/>
+      </svg>
+    </div>
+    <div class="rv walk__intro" style="margin-bottom:clamp(2.5rem,6vw,4.5rem)">
+      <p class="eyebrow">Der Rundgang</p>
+      <h2 class="h2">Fünf Stationen<br>bis zur Haustür</h2>
+    </div>
+
+    <div class="stations" id="stations">
+      <article class="st rv">
+        <span class="st__dot" aria-hidden="true"></span>
+        <div>
+          <span class="st__num">Station 01</span>
+          <h3 class="h3 st__t">Die Wächter</h3>
+          <p class="muted">Drei mannshohe Gestalten in langen Gewändern stehen in grünes Licht getaucht vor der Hauswand. Ihr Blick geht nach unten, auf den Sarg zu ihren Füßen.</p>
+        </div>
+        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Drei große Gestalten in Gewändern vor der grün beleuchteten Hauswand"><b>station-01-waechter.jpg</b><i>4:5</i></div></div>
+      </article>
+
+      <article class="st rv">
+        <span class="st__dot" aria-hidden="true"></span>
+        <div>
+          <span class="st__num">Station 02</span>
+          <h3 class="h3 st__t">Das frische Grab</h3>
+          <p class="muted">Der Totengräber hat schon angefangen. Die Schaufel steckt noch im Loch, der Sarg wartet daneben. Für wen, sagt niemand.</p>
+        </div>
+        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Ein Totengräber mit Schaufel neben einem offenen Sarg und einem ausgehobenen Grab"><b>station-02-grab.jpg</b><i>4:5</i></div></div>
+      </article>
+
+      <article class="st rv">
+        <span class="st__dot" aria-hidden="true"></span>
+        <div>
+          <span class="st__num">Station 03</span>
+          <h3 class="h3 st__t">Der Rasenmäher</h3>
+          <p class="muted">Im Garten läuft ein Mäher ohne Fahrer. Jemand hat ihn zu spät kommen sehen. Der Rasen ist an dieser Stelle sehr rot.</p>
+        </div>
+        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Ein fahrerloser Rasenmäher im Garten mit einer Puppe darunter"><b>station-03-rasenmaeher.jpg</b><i>4:5</i></div></div>
+      </article>
+
+      <article class="st rv">
+        <span class="st__dot" aria-hidden="true"></span>
+        <div>
+          <span class="st__num">Station 04</span>
+          <h3 class="h3 st__t">Der Häcksler</h3>
+          <p class="muted">Ganz vorne am Gehweg, direkt neben dem Zaun. Zwei Hände verschwinden darin. Näher rangehen darf man trotzdem.</p>
+        </div>
+        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Ein Gartenhäcksler am Zaun, aus dem zwei Hände herausragen"><b>station-04-haecksler.jpg</b><i>4:5</i></div></div>
+      </article>
+
+      <article class="st rv">
+        <span class="st__dot" aria-hidden="true"></span>
+        <div>
+          <span class="st__num">Station 05</span>
+          <h3 class="h3 st__t">Das Netz</h3>
+          <p class="muted">Über Büsche, Bäume und den kompletten Zaun ziehen sich unzählige Spinnweben. Man sieht sie erst, wenn man schon drinsteht.</p>
+        </div>
+        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Dichte künstliche Spinnweben über Büschen, Bäumen und dem Gartenzaun"><b>station-05-netz.jpg</b><i>4:5</i></div></div>
+      </article>
+    </div>
+
+    <p class="walk__end rv">„Und das ist nur das, was von der Straße aus zu sehen ist.“</p>
+  </div>
+</section>
+
+<!-- ================= TERMINE ================= -->
+<section class="section" id="termine">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Termine &amp; Öffnungszeiten</p>
+      <h2 class="h2">Wann es<br>offen ist</h2>
+      <p class="lead muted" style="margin-top:1.5rem">Der Rundgang ist nur an wenigen Abenden im Oktober begehbar. Danach wird abgebaut — bis zum nächsten Jahr.</p>
+    </div>
+
+    <div class="dates" id="dates"></div>
+
+    <div class="notice rv">
+      <div class="notice__h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 1.5 21h21z"/><path d="M12 10v5M12 18h.01"/></svg>Wetter</div>
+      <p class="muted">Bei Sturm oder Dauerregen kann kurzfristig geschlossen bleiben — die Technik im Garten ist nicht wasserdicht. Ob geöffnet ist, steht immer zuerst auf <a href="https://www.instagram.com/roedentaler_horrorhaus/" rel="noopener">Instagram</a>.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="drip drip--moss" viewBox="0 0 1200 38" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1200v7c-15 0-19 16-31 16s-16-16-30-16-18 9-31 9-17-9-30-9-20 18-33 18-15-18-30-18-19 11-32 11-16-11-30-11-21 14-34 14-16-14-30-14-18 8-31 8-17-8-30-8-20 17-33 17-15-17-30-17-19 10-32 10-16-10-30-10-21 13-34 13-16-13-30-13-18 7-31 7-17-7-30-7-20 15-33 15-15-15-30-15-19 9-32 9-16-9-30-9-21 12-34 12-16-12-30-12-18 6-31 6-17-6-30-6-20 14-33 14-15-14-30-14-19 8-32 8-16-8-30-8V0z"/></svg>
+
+<!-- ================= GALERIE ================= -->
+<section class="section section--soil" id="galerie">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Galerie</p>
+      <h2 class="h2">Aus den<br>letzten Jahren</h2>
+      <p class="muted" style="margin-top:1.4rem">Auf dem Handy siehst du alles normal. Am Rechner brauchst du die Taschenlampe.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Galerie nach Jahr filtern">
+      <button class="tab" role="tab" aria-selected="true" data-year="alle">Alle</button>
+      <button class="tab" role="tab" aria-selected="false" data-year="2025">2025</button>
+      <button class="tab" role="tab" aria-selected="false" data-year="2024">2024</button>
+      <button class="tab" role="tab" aria-selected="false" data-year="2023">2023</button>
+    </div>
+
+    <div class="gal" id="gal">
+      <div class="gal__spot" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BESUCHERINFOS ================= -->
+<section class="section" id="infos">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Besucherinfos</p>
+      <h2 class="h2">Bevor du<br>losgehst</h2>
+    </div>
+    <div class="duo">
+      <div class="panel rv">
+        <h3 class="h3">Gut zu wissen</h3>
+        <ul class="list">
+          <li>Der Eintritt kostet nichts. Vor der Einfahrt steht eine Spendenbox.</li>
+          <li>Der Rundgang dauert zehn bis zwanzig Minuten, je nachdem wie oft du stehen bleibst.</li>
+          <li>Geparkt wird auf der Straße. Aus dem Ortskern bist du in wenigen Minuten zu Fuß da.</li>
+          <li>Der Weg durch den Garten ist eben, aber unbefestigt. Mit Rollstuhl oder Kinderwagen geht es, kann aber eng werden.</li>
+          <li>Hunde bitte zu Hause lassen — zu laut, zu viel Nebel, zu viele Leute.</li>
+          <li>Zieh dich warm an. Im Oktober steht man länger draußen, als man denkt.</li>
+          <li>Fotografieren ist erlaubt und ausdrücklich erwünscht.</li>
+        </ul>
+      </div>
+      <div class="panel panel--warn rv">
+        <h3 class="h3">Bitte beachten</h3>
+        <ul class="list">
+          <li>Es gibt Schreckmomente und laute Geräusche. Nicht jeder findet das lustig.</li>
+          <li>Für kleine Kinder nur in Begleitung — und lieber in der frühen Zeitschiene.</li>
+          <li>Wer empfindlich auf blinkendes Licht reagiert, sollte den hinteren Gartenbereich meiden.</li>
+          <li>Nichts anfassen, nichts mitnehmen. Vieles ist selbst gebaut und geht schnell kaputt.</li>
+          <li>Bitte die Einfahrten der Nachbarn frei lassen und leise sein, wenn du gehst.</li>
+          <li>Keine offenen Flammen, keine Böller, kein Alkohol auf dem Grundstück.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANFAHRT ================= -->
+<section class="section section--soil" id="anfahrt">
+  <div class="wrap">
+    <div class="cols">
+      <div class="rv">
+        <p class="eyebrow">Anfahrt &amp; Parken</p>
+        <h2 class="h2">So findest<br>du uns</h2>
+        <p class="addr" style="margin-top:1.8rem">
+          <strong>Rödentaler Horrorhaus</strong><br>
+          [[PLATZHALTER: Straße und Hausnummer]]<br>
+          96472 Rödental-Einberg
+        </p>
+        <p class="muted" style="margin-top:1.4rem">Aus Coburg über die B4 Richtung Neustadt, in Rödental Abfahrt Einberg. Aus Neustadt kommend dasselbe in umgekehrter Richtung. Der Bus hält im Ortskern, von dort sind es etwa fünf Minuten zu Fuß.</p>
+        <p class="muted">Parken kannst du auf der Straße im Wohngebiet. Bitte such dir eine Lücke, die keine Einfahrt blockiert — die Nachbarn ertragen den Trubel jedes Jahr sehr geduldig.</p>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=R%C3%B6dental+Einberg" target="_blank" rel="noopener" style="margin-top:1rem">In Google Maps öffnen</a>
+      </div>
+      <div class="rv">
+        <div class="map">
+          <div class="ph r-4-5" role="img" aria-label="Kartenausschnitt von Rödental-Einberg mit der Lage des Horrorhauses"><b>karte-einberg.jpg</b><i>4:5 — statisches Kartenbild</i></div>
+        </div>
+        <p class="type muted" style="font-size:.75rem; margin-top:.8rem; letter-spacing:.05em">Interaktive Karte wird aus Datenschutzgründen erst nach Klick geladen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq">
+  <svg class="web web--br" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width=".6">
+    <path d="M0 0 L100 100 M0 0 L100 55 M0 0 L55 100 M0 0 L100 22 M0 0 L22 100"/>
+    <path d="M22 5 Q34 18 40 32 M38 9 Q52 26 58 46 M55 14 Q70 34 76 62 M72 20 Q88 44 92 78"/>
+  </svg>
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Häufige Fragen</p>
+      <h2 class="h2">Fragen, die<br>jedes Jahr kommen</h2>
+    </div>
+    <div class="faq" id="faqlist"></div>
+  </div>
+</section>
+
+<!-- ================= PRESSE ================= -->
+<section class="section section--soil" id="presse">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Presse</p>
+      <h2 class="h2">Darüber wurde<br>geschrieben</h2>
+      <div class="press">
+        <a class="press__n" href="[[PLATZHALTER: Artikel-Link]]">Neue Presse Coburg</a>
+        <a class="press__n" href="[[PLATZHALTER: Artikel-Link]]">Fränkischer Tag</a>
+      </div>
+      <p class="type muted" style="margin-top:2rem; font-size:.9375rem; letter-spacing:.04em; max-width:46ch">Presseanfragen und Drehgenehmigungen bitte vorab über das Kontaktformular — spontan vor Ort geht im Trubel unter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MITMACHEN ================= -->
+<section class="section" id="mitmachen">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Mitmachen &amp; Unterstützen</p>
+      <h2 class="h2">Es wird jedes<br>Jahr größer</h2>
+      <p class="lead muted" style="margin-top:1.5rem">Und jedes Jahr ein bisschen aufwendiger. Wer helfen will, ist willkommen.</p>
+    </div>
+    <div class="trio">
+      <div class="card rv">
+        <h3 class="h3">Spenden</h3>
+        <p>Vor der Einfahrt steht eine Box. Was reinkommt, geht in Material für das nächste Jahr und in [[PLATZHALTER: Spendenzweck]].</p>
+        <a class="btn btn--ghost" href="#kontakt">Mehr dazu erfahren</a>
+      </div>
+      <div class="card rv">
+        <h3 class="h3">Statisten &amp; Helfer</h3>
+        <p>An den Öffnungsabenden brauchen wir Leute, die im Kostüm mitgruseln, den Einlass regeln oder einfach ein Auge auf den Garten haben.</p>
+        <a class="btn btn--ghost" href="#kontakt">Ich bin dabei</a>
+      </div>
+      <div class="card rv">
+        <h3 class="h3">Deko &amp; Material</h3>
+        <p>Alte Holzpaletten, Stoffreste, Nebelmaschinen, Scheinwerfer, Technik, die bei dir nur rumsteht: Hier wird sie im Oktober gebraucht.</p>
+        <a class="btn btn--ghost" href="#kontakt">Etwas anbieten</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSTAGRAM ================= -->
+<section class="section section--soil" id="instagram">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <p class="eyebrow">Instagram</p>
+      <a class="ig__handle" href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">@roedentaler_horrorhaus</a>
+      <p class="muted" style="margin:1.2rem auto 2rem; max-width:52ch">Alle aktuellen Termine, kurzfristige Absagen und der Aufbau live aus dem Garten. Wenn irgendwo zuerst steht, dass heute offen ist, dann dort.</p>
+      <a class="btn" href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Auf Instagram folgen</a>
+    </div>
+    <div class="ig">
+      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Aufbau im Garten"><b>instagram-01.jpg</b><i>1:1</i></div>
+      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Detail einer Figur"><b>instagram-02.jpg</b><i>1:1</i></div>
+      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Nebel im Vorgarten"><b>instagram-03.jpg</b><i>1:1</i></div>
+      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Besucher am Zaun"><b>instagram-04.jpg</b><i>1:1</i></div>
+      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Kostüm-Detail"><b>instagram-05.jpg</b><i>1:1</i></div>
+      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Der Sarg bei Nacht"><b>instagram-06.jpg</b><i>1:1</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section class="section" id="kontakt">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Kontakt</p>
+      <h2 class="h2">Schreib uns</h2>
+      <p class="lead muted" style="margin-top:1.5rem">Wir antworten, sobald wir aus dem Garten kommen. Im Oktober kann das ein paar Tage dauern.</p>
+    </div>
+
+    <div class="form" id="form">
+      <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name"><span class="err" id="e-name"></span></div>
+      <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" type="email" autocomplete="email"><span class="err" id="e-mail"></span></div>
+      <div class="field field--full"><label for="f-topic">Worum geht es?</label>
+        <select id="f-topic">
+          <option value="Allgemeine Frage">Allgemeine Frage</option>
+          <option value="Presse">Presse</option>
+          <option value="Mitmachen">Mitmachen</option>
+          <option value="Gruppenanfrage">Gruppenanfrage</option>
+        </select><span class="err"></span>
+      </div>
+      <div class="field field--full"><label for="f-msg">Nachricht</label><textarea id="f-msg"></textarea><span class="err" id="e-msg"></span></div>
+      <div class="field field--full"><button class="btn" type="button" id="send">Nachricht senden</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__ttl">Rödentaler<br>Horrorhaus</div>
+        <p class="type muted" style="font-size:.8125rem; letter-spacing:.05em; max-width:30ch">Ein privates Halloween-Projekt aus Rödental-Einberg. Eintritt frei, Nerven auf eigene Kosten.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Fußzeile">
+        <a href="#rundgang">Rundgang</a>
+        <a href="#termine">Termine</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#infos">Besucherinfos</a>
+        <a href="#anfahrt">Anfahrt</a>
+      </nav>
+      <nav class="foot__nav" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <div class="foot__bar">
+      <span>© <span id="year">2026</span> Rödentaler Horrorhaus</span>
+      <span>Gestaltung &amp; Umsetzung: Klarnetz</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Bildansicht">
+  <button class="lb__btn lb__x" id="lb-x" aria-label="Schließen">✕</button>
+  <button class="lb__btn lb__p" id="lb-p" aria-label="Vorheriges Bild">‹</button>
+  <button class="lb__btn lb__n" id="lb-n" aria-label="Nächstes Bild">›</button>
+  <div class="lb__stage">
+    <div class="ph r-3-2" id="lb-img" role="img" aria-label="Vergrößertes Bild aus der Galerie"><b>—</b><i>—</i></div>
+    <p class="lb__cap" id="lb-cap"></p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $  = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* ---------- Jahr im Footer ---------- */
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- Navigation ---------- */
+  var nav = $('#nav'), burger = $('#burger'), panel = $('#navpanel');
+  var onScrollNav = function(){ nav.classList.toggle('is-stuck', window.scrollY > 24) };
+  onScrollNav(); window.addEventListener('scroll', onScrollNav, {passive:true});
+
+  burger.addEventListener('click', function(){
+    var open = panel.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.textContent = open ? 'Schließen' : 'Menü';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  $$('#navpanel a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+      burger.textContent = 'Menü';
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ---------- Countdown bis zur nächsten Halloween-Nacht ---------- */
+  function nextHalloween(){
+    var now = new Date();
+    var t = new Date(now.getFullYear(), 9, 31, 18, 0, 0);
+    if (now > t) t = new Date(now.getFullYear() + 1, 9, 31, 18, 0, 0);
+    return t;
+  }
+  var target = nextHalloween();
+  var cD=$('#c-d'), cH=$('#c-h'), cM=$('#c-m'), cS=$('#c-s'), cNote=$('#c-note');
+  function pad(n){return n < 10 ? '0'+n : String(n)}
+  function tick(){
+    var diff = target - new Date();
+    if (diff <= 0){
+      cD.textContent='00'; cH.textContent='00'; cM.textContent='00'; cS.textContent='00';
+      cNote.textContent = 'Heute Nacht. Komm vorbei.';
+      return;
+    }
+    var s = Math.floor(diff/1000);
+    cD.textContent = String(Math.floor(s/86400));
+    cH.textContent = pad(Math.floor(s/3600)%24);
+    cM.textContent = pad(Math.floor(s/60)%60);
+    cS.textContent = pad(s%60);
+    cNote.textContent = 'bis zur Halloween-Nacht am 31. Oktober ' + target.getFullYear();
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ============================================================
+     TERMINE  —  [[PLATZHALTER: Termine]]
+     Hier pflegen. Format: JJJJ-MM-TT. Reihenfolge egal, wird sortiert.
+     ============================================================ */
+  var TERMINE = [
+    { datum:'2026-10-23', zeit:'18:00 – 21:00 Uhr', titel:'Öffnungsabend',   hinweis:'Ruhigster Abend — gut mit kleineren Kindern.', highlight:false },
+    { datum:'2026-10-24', zeit:'18:00 – 21:00 Uhr', titel:'Öffnungsabend',   hinweis:'',                                              highlight:false },
+    { datum:'2026-10-30', zeit:'18:00 – 21:30 Uhr', titel:'Öffnungsabend',   hinweis:'Alle Effekte laufen, inklusive Nebel.',          highlight:false },
+    { datum:'2026-10-31', zeit:'18:00 – 22:00 Uhr', titel:'Halloween-Nacht', hinweis:'Die große Nacht. Familie Müller empfängt in Kostüm.', highlight:true }
+  ];
+
+  var WD = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+  var MO = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  (function renderDates(){
+    var host = $('#dates');
+    var today = new Date(); today.setHours(0,0,0,0);
+    var items = TERMINE.map(function(t){
+      var p = t.datum.split('-');
+      var d = new Date(+p[0], +p[1]-1, +p[2]);
+      return {t:t, d:d, past: d < today};
+    });
+    var kommend = items.filter(function(i){return !i.past}).sort(function(a,b){return a.d-b.d});
+    var vorbei  = items.filter(function(i){return  i.past}).sort(function(a,b){return b.d-a.d});
+    var all = kommend.concat(vorbei);
+
+    host.innerHTML = all.map(function(i, idx){
+      var isNext = !i.past && idx === 0;
+      var hl = (!i.past && (isNext || i.t.highlight));
+      var tag = i.past ? 'Vorbei' : (isNext ? 'Als Nächstes' : (i.t.highlight ? 'Highlight' : 'Geöffnet'));
+      return '<article class="date rv' + (hl ? ' date--hl' : '') + (i.past ? ' date--past' : '') + '">' +
+        '<span class="date__tag">' + tag + '</span>' +
+        '<div class="date__d">' + i.d.getDate() + '. ' + MO[i.d.getMonth()] + '</div>' +
+        '<div class="date__wd">' + WD[i.d.getDay()] + ', ' + i.d.getFullYear() + '</div>' +
+        '<div class="date__t">' + i.t.zeit + '</div>' +
+        (i.t.hinweis ? '<p class="date__n">' + i.t.hinweis + '</p>' : '') +
+      '</article>';
+    }).join('');
+  })();
+
+  /* ---------- Galerie ---------- */
+  var BILDER = [
+    {f:'galerie-01.jpg', r:'r-4-5', j:'2025', a:'Die drei Wächter in grünem Licht vor der Hauswand'},
+    {f:'galerie-02.jpg', r:'r-1-1', j:'2025', a:'Nebel zieht über den offenen Sarg im Vorgarten'},
+    {f:'galerie-03.jpg', r:'r-3-2', j:'2025', a:'Besucher stehen am Zaun und schauen in den Garten'},
+    {f:'galerie-04.jpg', r:'r-4-5', j:'2025', a:'Der Totengräber mit Schaufel neben dem frischen Grab'},
+    {f:'galerie-05.jpg', r:'r-1-1', j:'2024', a:'Detailaufnahme des Häckslers am Gehweg'},
+    {f:'galerie-06.jpg', r:'r-3-2', j:'2024', a:'Das gesamte Haus bei Nacht in grüner Beleuchtung'},
+    {f:'galerie-07.jpg', r:'r-4-5', j:'2024', a:'Spinnweben über den Büschen im Vorgarten'},
+    {f:'galerie-08.jpg', r:'r-1-1', j:'2024', a:'Christian Müller im Kostüm begrüßt Besucher'},
+    {f:'galerie-09.jpg', r:'r-3-2', j:'2023', a:'Der fahrerlose Rasenmäher im hinteren Garten'},
+    {f:'galerie-10.jpg', r:'r-4-5', j:'2023', a:'Beleuchtete Grabsteine entlang des Gartenwegs'},
+    {f:'galerie-11.jpg', r:'r-1-1', j:'2023', a:'Kerzenlicht und Nebel am Eingang zum Rundgang'},
+    {f:'galerie-12.jpg', r:'r-3-2', j:'2023', a:'Blick vom Gehweg auf das komplett dekorierte Grundstück'}
+  ];
+  var gal = $('#gal'), spot = $('.gal__spot'), sicht = BILDER.slice();
+
+  function renderGal(jahr){
+    sicht = (jahr === 'alle') ? BILDER.slice() : BILDER.filter(function(b){return b.j === jahr});
+    $$('.gal__i', gal).forEach(function(el){el.remove()});
+    sicht.forEach(function(b, i){
+      var btn = document.createElement('button');
+      btn.className = 'gal__i';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Bild vergrößern: ' + b.a);
+      btn.dataset.i = String(i);
+      btn.innerHTML = '<div class="ph ' + b.r + '" role="img" aria-label="' + b.a + '"><b>' + b.f + '</b><i>' + b.r.replace('r-','').replace(/-/g,':') + '</i></div>';
+      btn.addEventListener('click', function(){ openLb(+btn.dataset.i) });
+      gal.appendChild(btn);
+    });
+  }
+  renderGal('alle');
+
+  $$('.tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      $$('.tab').forEach(function(t){t.setAttribute('aria-selected','false')});
+      tab.setAttribute('aria-selected','true');
+      renderGal(tab.dataset.year);
+    });
+  });
+
+  /* Taschenlampe — nur Maus, nicht bei reduzierter Bewegung */
+  if (!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var tx=0, ty=0, cx=0, cy=0, raf=null, lit=false;
+    gal.addEventListener('pointerenter', function(){ lit = true; gal.classList.add('is-lit'); loop(); });
+    gal.addEventListener('pointerleave', function(){ lit = false; gal.classList.remove('is-lit'); });
+    gal.addEventListener('pointermove', function(e){
+      var r = gal.getBoundingClientRect();
+      tx = e.clientX - r.left; ty = e.clientY - r.top;
+    });
+    function loop(){
+      cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+      spot.style.setProperty('--mx', cx + 'px');
+      spot.style.setProperty('--my', cy + 'px');
+      if (lit) raf = requestAnimationFrame(loop); else cancelAnimationFrame(raf);
+    }
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lb=$('#lb'), lbImg=$('#lb-img'), lbCap=$('#lb-cap'), idx=0, lastFocus=null;
+  function paint(){
+    var b = sicht[idx];
+    lbImg.className = 'ph ' + b.r;
+    lbImg.innerHTML = '<b>' + b.f + '</b><i>' + b.r.replace('r-','').replace(/-/g,':') + '</i>';
+    lbImg.setAttribute('role','img');
+    lbImg.setAttribute('aria-label', b.a);
+    lbCap.textContent = b.a + '  ·  ' + b.j + '  ·  ' + (idx+1) + ' von ' + sicht.length;
+  }
+  function openLb(i){
+    lastFocus = document.activeElement;
+    idx = i; paint(); lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    $('#lb-x').focus();
+  }
+  function closeLb(){
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  function step(n){ idx = (idx + n + sicht.length) % sicht.length; paint(); }
+  $('#lb-x').addEventListener('click', closeLb);
+  $('#lb-p').addEventListener('click', function(){step(-1)});
+  $('#lb-n').addEventListener('click', function(){step(1)});
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+    else if (e.key === 'Tab'){
+      var f = $$('button', lb);
+      var first = f[0], last = f[f.length-1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  var sx = null;
+  lb.addEventListener('touchstart', function(e){ sx = e.changedTouches[0].clientX }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 45) step(dx > 0 ? -1 : 1);
+    sx = null;
+  }, {passive:true});
+
+  /* ---------- FAQ ---------- */
+  var FAQ = [
+    ['Was kostet der Eintritt?','Nichts. Es ist ein privates Projekt, kein Geschäft. Vor der Einfahrt steht eine Spendenbox — was reinkommt, geht in Material fürs nächste Jahr.'],
+    ['Ab welchem Alter ist das geeignet?','Eine feste Grenze gibt es nicht. Ab etwa acht Jahren kommen die meisten gut damit klar. Jüngere Kinder bitte an die Hand nehmen und lieber gleich zu Beginn kommen, wenn noch nicht alle Effekte laufen.'],
+    ['Wie lange dauert der Rundgang?','Zehn bis zwanzig Minuten. Wer alles genau anschaut und fotografiert, braucht länger.'],
+    ['Muss ich mich anmelden?','Nein. Einfach kommen. An Halloween kann es an der Einfahrt kurz Wartezeit geben.'],
+    ['Darf ich fotografieren und filmen?','Ja, sehr gerne. Wir freuen uns über jeden Beitrag, in dem wir verlinkt werden. Bitte nur keine anderen Besucher ungefragt aufnehmen. Für Drehs mit Team bitte vorher kurz melden.'],
+    ['Findet es auch bei Regen statt?','Leichter Regen ist kein Problem. Bei Sturm oder Dauerregen bleibt zu, weil Technik und Figuren draußen stehen. Die Entscheidung fällt am selben Nachmittag und steht dann auf Instagram.'],
+    ['Kann ich mit einer Gruppe kommen?','Ja. Ab etwa zwölf Personen schreib uns bitte vorher kurz, dann verteilen wir euch auf einen ruhigeren Zeitpunkt.'],
+    ['Darf ich verkleidet kommen?','Unbedingt. Nur bitte ohne täuschend echte Waffenattrappen — das gibt jedes Jahr Diskussionen an der Straße.']
+  ];
+  (function renderFaq(){
+    var host = $('#faqlist');
+    FAQ.forEach(function(item, i){
+      var q = document.createElement('button');
+      q.className = 'faq__q'; q.type = 'button';
+      q.setAttribute('aria-expanded','false');
+      q.setAttribute('aria-controls','faq-a-'+i);
+      q.id = 'faq-q-'+i;
+      q.textContent = item[0];
+      var a = document.createElement('div');
+      a.className = 'faq__a'; a.id = 'faq-a-'+i;
+      a.setAttribute('role','region');
+      a.setAttribute('aria-labelledby','faq-q-'+i);
+      a.innerHTML = '<div><p>' + item[1] + '</p></div>';
+      q.addEventListener('click', function(){
+        var open = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', String(!open));
+        a.style.maxHeight = open ? '0px' : (a.scrollHeight + 'px');
+      });
+      host.appendChild(q); host.appendChild(a);
+    });
+  })();
+
+  /* ---------- Scroll-Reveal ---------- */
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if (e.isIntersecting){
+          setTimeout(function(){ e.target.classList.add('is-in') }, i * 80);
+          io.unobserve(e.target);
+        }
+      });
+    }, {rootMargin:'0px 0px -12% 0px', threshold:0.08});
+    $$('.rv').forEach(function(el){ io.observe(el) });
+    var mo = new MutationObserver(function(){ $$('.rv:not(.is-in)').forEach(function(el){io.observe(el)}) });
+    mo.observe($('#dates'), {childList:true});
+  } else {
+    $$('.rv').forEach(function(el){ el.classList.add('is-in') });
+  }
+
+  /* ---------- Rundgang-Linie ---------- */
+  var wprog = $('#wprog'), walk = $('#rundgang'), sts = $$('.st');
+  if (wprog){
+    var len = wprog.getTotalLength();
+    wprog.style.strokeDasharray = len;
+    wprog.style.strokeDashoffset = len;
+    var ticking = false;
+    function walkScroll(){
+      var r = walk.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var p = (vh * 0.62 - r.top) / r.height;
+      p = Math.max(0, Math.min(1, p));
+      wprog.style.strokeDashoffset = len * (1 - p);
+      var mid = vh * 0.5, best = -1, bestD = Infinity;
+      sts.forEach(function(s, i){
+        var b = s.getBoundingClientRect();
+        var d = Math.abs((b.top + b.height/2) - mid);
+        if (d < bestD){ bestD = d; best = i; }
+      });
+      sts.forEach(function(s, i){ s.classList.toggle('is-active', i === best && bestD < vh * 0.6) });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking){ ticking = true; requestAnimationFrame(walkScroll) }
+    }, {passive:true});
+    window.addEventListener('resize', walkScroll);
+    walkScroll();
+  }
+
+  /* ---------- Kontaktformular ---------- */
+  var toast = $('#toast');
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    setTimeout(function(){ toast.classList.remove('is-on') }, 4200);
+  }
+  function bad(id, msg){
+    var f = $('#f-'+id).closest('.field');
+    f.classList.add('is-bad');
+    var e = $('#e-'+id); if (e) e.textContent = msg;
+    return false;
+  }
+  function clear(id){
+    var f = $('#f-'+id).closest('.field');
+    f.classList.remove('is-bad');
+    var e = $('#e-'+id); if (e) e.textContent = '';
+  }
+  $('#send').addEventListener('click', function(){
+    var name = $('#f-name').value.trim();
+    var mail = $('#f-mail').value.trim();
+    var msg  = $('#f-msg').value.trim();
+    var topic= $('#f-topic').value;
+    var ok = true;
+    ['name','mail','msg'].forEach(clear);
+    if (name.length < 2) ok = bad('name','Bitte trag deinen Namen ein.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) ok = bad('mail','Diese E-Mail-Adresse stimmt nicht.');
+    if (msg.length < 10) ok = bad('msg','Bitte schreib uns ein paar Sätze mehr.');
+    if (!ok){ say('Bitte prüf die markierten Felder.'); return; }
+
+    // TODO Livegang: hier den echten Formular-Endpunkt anbinden (z. B. Formspree, Web3Forms
+    // oder eine eigene Funktion). Bis dahin öffnet sich das E-Mail-Programm.
+    var to = 'kontakt@roedentaler-horrorhaus.de';
+    var body = 'Name: ' + name + '\nE-Mail: ' + mail + '\nThema: ' + topic + '\n\n' + msg;
+    window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('[' + topic + '] Anfrage über die Website') + '&body=' + encodeURIComponent(body);
+    say('Dein E-Mail-Programm öffnet sich.');
+  });
+})();
+</script>
+</body>
+</html>
