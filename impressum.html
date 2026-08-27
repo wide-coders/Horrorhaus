@@ -8,10 +8,14 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M16 5c-5 0-9 4-9 9v8l3-2 3 2 3-2 3 2 3-2 3 2v-8c0-5-4-9-9-9z' fill='%237CFF2E'/%3E%3Ccircle cx='12' cy='14' r='2' fill='%23000'/%3E%3Ccircle cx='20' cy='14' r='2' fill='%23000'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Nosifer&family=Special+Elite&display=swap" rel="stylesheet">
+
 <style>
+@font-face{font-family:'Nosifer';src:url('Nosifer-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Anton';src:url('Anton-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Special Elite';src:url('SpecialElite-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+
 :root{--void:#000;--soil:#0A0D08;--slime:#7CFF2E;--moss:#2F5C18;--blood:#8B0F0F;--bone:#EDEDE6;--fog:#8A9186;
 --f-display:'Nosifer','Impact',fantasy;--f-head:'Anton','Haettenschweiler','Arial Narrow',sans-serif;
 --f-body:'Barlow',system-ui,sans-serif;--f-type:'Special Elite','Courier New',monospace;
@@ -72,21 +76,21 @@ text-shadow:0 4px 0 var(--moss),0 0 42px rgba(124,255,46,.28);margin:0 0 1.5rem}
 
 <h2>Angaben gem&auml;&szlig; &sect; 5 DDG</h2>
 <p class="block">
-<span class="ph-txt">[[PLATZHALTER: Vor- und Nachname der verantwortlichen Person]]</span><br>
-<span class="ph-txt">[[PLATZHALTER: Stra&szlig;e und Hausnummer]]</span><br>
+Christian M&uuml;ller<br>
+Einberger Stra&szlig;e 68a<br>
 96472 R&ouml;dental
 </p>
 
 <h2>Kontakt</h2>
 <p class="block">
-Telefon: <span class="ph-txt">[[PLATZHALTER: Telefonnummer]]</span><br>
-E-Mail: <span class="ph-txt">[[PLATZHALTER: E-Mail-Adresse]]</span>
+Telefon: +49 160 4962932<br>
+E-Mail: <a href="mailto:mc83@web.de">mc83@web.de</a>
 </p>
 
 <h2>Verantwortlich f&uuml;r den Inhalt nach &sect; 18 Abs. 2 MStV</h2>
 <p class="block">
-<span class="ph-txt">[[PLATZHALTER: Vor- und Nachname]]</span><br>
-<span class="ph-txt">[[PLATZHALTER: Stra&szlig;e und Hausnummer]]</span><br>
+Christian M&uuml;ller<br>
+Einberger Stra&szlig;e 68a<br>
 96472 R&ouml;dental
 </p>
 
@@ -105,13 +109,11 @@ E-Mail: <span class="ph-txt">[[PLATZHALTER: E-Mail-Adresse]]</span>
 <h2>Fotos vor Ort</h2>
 <p class="muted">Besucherinnen und Besucher d&uuml;rfen auf dem Gel&auml;nde fotografieren und filmen. Bitte nehmen Sie dabei keine anderen G&auml;ste ohne deren Einverst&auml;ndnis auf. Aufnahmen der Dekoration d&uuml;rfen frei in sozialen Netzwerken geteilt werden.</p>
 
-<h2>Gestaltung und technische Umsetzung</h2>
-<p class="muted">Klarnetz &mdash; <span class="ph-txt">[[PLATZHALTER: Website oder Kontakt Klarnetz]]</span></p>
 
 </main>
 <footer class="foot"><div class="foot__in">
   <span>&copy; <span id="y">2026</span> R&ouml;dentaler Horrorhaus</span>
-  <span><a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="datenschutz.html">Datenschutz</a> &nbsp;&middot;&nbsp; Gestaltung: Klarnetz</span>
+  <span><a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>

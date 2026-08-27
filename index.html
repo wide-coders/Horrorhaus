@@ -14,20 +14,18 @@
 <meta property="og:title" content="Rödentaler Horrorhaus — Traust du dich?">
 <meta property="og:description" content="Ein Vorgarten in Rödental-Einberg. Einmal im Jahr. Eintritt kostet nichts. Nerven schon.">
 <meta property="og:url" content="https://roedentaler-horrorhaus.de/">
-<meta property="og:image" content="https://roedentaler-horrorhaus.de/images/og-image.jpg">
+<meta property="og:image" content="https://roedentaler-horrorhaus.de/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rödentaler Horrorhaus — Traust du dich?">
 <meta name="twitter:description" content="Ein Vorgarten in Rödental-Einberg. Einmal im Jahr. Eintritt frei.">
-<meta name="twitter:image" content="https://roedentaler-horrorhaus.de/images/og-image.jpg">
+<meta name="twitter:image" content="https://roedentaler-horrorhaus.de/og-image.jpg">
 <meta name="theme-color" content="#000000">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M16 5c-5 0-9 4-9 9v8l3-2 3 2 3-2 3 2 3-2 3 2v-8c0-5-4-9-9-9z' fill='%237CFF2E'/%3E%3Ccircle cx='12' cy='14' r='2' fill='%23000'/%3E%3Ccircle cx='20' cy='14' r='2' fill='%23000'/%3E%3C/svg%3E">
 
-<!-- HINWEIS FÜR DEN LIVEGANG: Schriften vor der Veröffentlichung lokal hosten (DSGVO).
-     Dateien von fonts.google.com herunterladen, nach /fonts/ legen und hier per @font-face einbinden. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Nosifer&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="preload" href="Anton-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="Nosifer-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="figur.webp" as="image">
 
 <script type="application/ld+json">
 {
@@ -39,12 +37,12 @@
       "name": "Rödentaler Horrorhaus",
       "description": "Privat gestalteter Halloween-Parcours im Vorgarten einer Familie in Rödental-Einberg. Jeden Oktober geöffnet, Eintritt frei.",
       "url": "https://roedentaler-horrorhaus.de/",
-      "image": "https://roedentaler-horrorhaus.de/images/og-image.jpg",
+      "image": "https://roedentaler-horrorhaus.de/og-image.jpg",
       "isAccessibleForFree": true,
       "publicAccess": true,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "PLATZHALTER Straße und Hausnummer",
+        "streetAddress": "Einberger Straße 68a",
         "addressLocality": "Rödental",
         "addressRegion": "Bayern",
         "postalCode": "96472",
@@ -60,7 +58,7 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": { "@id": "https://roedentaler-horrorhaus.de/#attraktion" },
-      "image": "https://roedentaler-horrorhaus.de/images/og-image.jpg",
+      "image": "https://roedentaler-horrorhaus.de/og-image.jpg",
       "description": "Die große Nacht: Der komplette Rundgang ist geöffnet, Familie Müller empfängt in Kostüm.",
       "offers": {
         "@type": "Offer",
@@ -77,6 +75,13 @@
 </script>
 
 <style>
+/* Lokale Schriften — DSGVO-konform, keine Verbindung zu Google */
+@font-face{font-family:'Nosifer';src:url('Nosifer-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Anton';src:url('Anton-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Special Elite';src:url('SpecialElite-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+
 /* ============================================================
    RÖDENTALER HORRORHAUS — Design-System
    ============================================================ */
@@ -122,7 +127,7 @@ a:hover{text-decoration:underline; text-underline-offset:.25em}
 h1,h2,h3,h4{margin:0; font-weight:400}
 .h-display{
   font-family:var(--f-display); color:var(--slime);
-  font-size:clamp(1.6rem,5vw,4.4rem); line-height:1.06;
+  font-size:clamp(1.5rem,4.6vw,3.9rem); line-height:1.08;
   letter-spacing:.005em; text-wrap:balance;
   text-shadow:0 4px 0 var(--moss), 0 0 42px rgba(124,255,46,.28);
 }
@@ -227,22 +232,27 @@ p{margin:0 0 1.15em; max-width:68ch}
 }
 
 /* ---------- Hero ---------- */
-.hero{position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; padding-block:7rem 4rem}
-.hero__bg{position:absolute; inset:0; z-index:0}
-.hero__bg .ph{height:100%; border:0; background:#040604; align-items:flex-start; justify-content:flex-end; padding:2rem; opacity:.45}
-.hero__bg::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.55) 42%, #000 96%)}
+.hero{position:relative; min-height:100svh; display:flex; align-items:center;
+  overflow:hidden; padding-block:clamp(17rem, 41svh, 25rem) 3.5rem}
+.hero__figure{
+  position:absolute; top:clamp(3.5rem, 7svh, 6rem); left:50%; transform:translateX(-50%);
+  height:clamp(270px, 52svh, 520px); width:auto; z-index:0; pointer-events:none;
+  filter:drop-shadow(0 0 90px rgba(124,255,46,.22));
+}
+.hero--nofig{padding-block:7rem 3.5rem}
 .hero__inner{position:relative; z-index:2; text-align:center; width:100%}
-.hero__sub{font-family:var(--f-head); text-transform:uppercase; font-size:clamp(1.3rem,3.6vw,2.6rem); letter-spacing:.03em; margin:1.4rem 0 .4rem; line-height:1}
+.hero__inner p{margin-inline:auto}
+.hero__sub{font-family:var(--f-head); text-transform:uppercase; font-size:clamp(1.15rem,3vw,2.15rem); letter-spacing:.03em; margin:1.1rem auto .35rem; line-height:1}
 .hero__dare{font-family:var(--f-type); font-size:clamp(1rem,2vw,1.35rem); color:var(--fog); letter-spacing:.06em}
 .flicker{animation:flick .45s steps(2,end) 1}
 @keyframes flick{0%{opacity:.1}20%{opacity:1}35%{opacity:.15}55%{opacity:1}70%{opacity:.35}100%{opacity:1}}
-.hero__cta{display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-top:2.4rem}
+.hero__cta{display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-top:2rem}
 
 /* ---------- Countdown ---------- */
-.count{display:flex; gap:clamp(.6rem,2.4vw,2rem); justify-content:center; margin-top:2.6rem; flex-wrap:wrap}
+.count{display:flex; gap:clamp(.6rem,2.4vw,2rem); justify-content:center; margin-top:2rem; flex-wrap:wrap}
 .count__u{min-width:clamp(66px,15vw,124px)}
 .count__n{
-  font-family:var(--f-head); font-size:clamp(2.4rem,7vw,5rem); line-height:.9;
+  font-family:var(--f-head); font-size:clamp(2.1rem,5.6vw,4rem); line-height:.9;
   color:var(--bone); font-variant-numeric:tabular-nums;
 }
 .count__u--s .count__n{color:var(--blood)}
@@ -276,7 +286,6 @@ p{margin:0 0 1.15em; max-width:68ch}
 .walk__intro{margin-left:clamp(2.6rem,6vw,5.2rem); position:relative; z-index:2}
 .st{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,3.5rem); align-items:center; position:relative}
 .st:nth-child(even) .st__media{order:-1}
-.st__media .ph{max-width:400px; margin-inline:auto}
 .st__num{font-family:var(--f-type); color:var(--slime); font-size:.8125rem; letter-spacing:.2em; display:block; margin-bottom:.55rem}
 .st__t{margin-bottom:.7rem}
 .st__dot{
@@ -332,6 +341,11 @@ p{margin:0 0 1.15em; max-width:68ch}
   break-inside:avoid; margin:0 0 1rem; padding:0; border:0; background:none; width:100%;
   cursor:pointer; display:block; transition:filter .35s var(--ease), transform .35s var(--ease);
 }
+.gal__i img{width:100%; height:auto; display:block; border:1px solid rgba(47,92,24,.55)}
+.ig__i{width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border:1px solid var(--moss)}
+.cols img{width:100%; height:auto; border:1px solid var(--moss)}
+.map img{width:100%; height:auto; display:block}
+.st__media img{width:100%; max-width:400px; margin-inline:auto; height:auto; display:block; border:1px solid var(--moss)}
 .gal.is-lit .gal__i{filter:brightness(.45)}
 .gal__i:hover,.gal__i:focus-visible{filter:brightness(1) !important; transform:translateY(-3px)}
 .gal__spot{
@@ -343,8 +357,8 @@ p{margin:0 0 1.15em; max-width:68ch}
 /* ---------- Lightbox ---------- */
 .lb{position:fixed; inset:0; z-index:9500; background:rgba(0,0,0,.96); display:none; align-items:center; justify-content:center; padding:clamp(1rem,5vw,4rem)}
 .lb.is-open{display:flex}
-.lb__stage{max-width:900px; width:100%; display:flex; flex-direction:column; align-items:center}
-.lb .ph{height:min(74svh,760px); width:auto; max-width:100%}
+.lb__stage{max-width:1100px; width:100%; display:flex; flex-direction:column; align-items:center}
+.lb__stage img{max-height:76svh; max-width:100%; width:auto; height:auto; display:block}
 .lb__cap{font-family:var(--f-type); color:var(--fog); text-align:center; margin-top:1rem; letter-spacing:.06em; font-size:.875rem}
 .lb__btn{position:absolute; background:transparent; border:1px solid var(--moss); color:var(--slime); width:48px; height:48px; cursor:pointer; font-size:1.3rem; line-height:1; display:grid; place-items:center; transition:background .2s var(--ease)}
 .lb__btn:hover{background:rgba(124,255,46,.12)}
@@ -486,12 +500,10 @@ p{margin:0 0 1.15em; max-width:68ch}
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="hero__bg">
-    <div class="ph" role="img" aria-label="Das komplette Haus bei Nacht, grün beleuchtet, mit der Halloween-Dekoration im Vorgarten">
-      <b>hero-haus-nacht.jpg</b><i>16:9</i>
-    </div>
-  </div>
   <div class="fog" aria-hidden="true"><span></span><span></span></div>
+  <img class="hero__figure" src="figur.webp" width="772" height="1299" fetchpriority="high"
+       alt="Leuchtender Totenschädel mit Kapuze — das Wahrzeichen des Rödentaler Horrorhauses"
+       onerror="this.remove();document.querySelector('.hero').classList.add('hero--nofig')">
   <div class="hero__inner wrap">
     <h1 class="h-display flicker">Rödentaler Horrorhaus</h1>
     <p class="hero__sub">Wir sehen uns im Oktober</p>
@@ -538,10 +550,9 @@ p{margin:0 0 1.15em; max-width:68ch}
         <blockquote class="quote"><span>„</span>Wir bauen das ganze Jahr. Für vier Abende.<span>“</span></blockquote>
       </div>
       <div class="rv">
-        <div class="ph r-3-2" role="img" aria-label="Christian und Tom Müller im Kostüm vor der beleuchteten Kulisse ihres Hauses">
-          <b>familie-mueller.jpg</b><i>3:2</i>
-        </div>
-        <p class="type muted" style="font-size:.8125rem; margin-top:.8rem; letter-spacing:.05em">Christian und Tom Müller vor der Kulisse.</p>
+        <img src="geschichte.jpg" width="1500" height="1000" loading="lazy"
+             alt="Vater und Sohn vor der dekorierten Hausfront, über ihnen eine große Gestalt mit ausgebreiteten Armen">
+        <p class="type muted" style="font-size:.8125rem; margin-top:.8rem; letter-spacing:.05em">Vater und Sohn vor der Kulisse.</p>
       </div>
     </div>
   </div>
@@ -571,7 +582,7 @@ p{margin:0 0 1.15em; max-width:68ch}
           <h3 class="h3 st__t">Die Wächter</h3>
           <p class="muted">Drei mannshohe Gestalten in langen Gewändern stehen in grünes Licht getaucht vor der Hauswand. Ihr Blick geht nach unten, auf den Sarg zu ihren Füßen.</p>
         </div>
-        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Drei große Gestalten in Gewändern vor der grün beleuchteten Hauswand"><b>station-01-waechter.jpg</b><i>4:5</i></div></div>
+        <div class="st__media"><img src="station-01-waechter.jpg" width="880" height="1100" loading="lazy" alt="Drei hohe Gestalten in langen Gewändern stehen in grünem Licht vor der Hauswand, davor ein Grabstein"></div>
       </article>
 
       <article class="st rv">
@@ -581,7 +592,7 @@ p{margin:0 0 1.15em; max-width:68ch}
           <h3 class="h3 st__t">Das frische Grab</h3>
           <p class="muted">Der Totengräber hat schon angefangen. Die Schaufel steckt noch im Loch, der Sarg wartet daneben. Für wen, sagt niemand.</p>
         </div>
-        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Ein Totengräber mit Schaufel neben einem offenen Sarg und einem ausgehobenen Grab"><b>station-02-grab.jpg</b><i>4:5</i></div></div>
+        <div class="st__media"><img src="station-02-grab.jpg" width="880" height="1100" loading="lazy" alt="Grabsteine und Skelette im grün beleuchteten Vorgarten"></div>
       </article>
 
       <article class="st rv">
@@ -591,7 +602,7 @@ p{margin:0 0 1.15em; max-width:68ch}
           <h3 class="h3 st__t">Der Rasenmäher</h3>
           <p class="muted">Im Garten läuft ein Mäher ohne Fahrer. Jemand hat ihn zu spät kommen sehen. Der Rasen ist an dieser Stelle sehr rot.</p>
         </div>
-        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Ein fahrerloser Rasenmäher im Garten mit einer Puppe darunter"><b>station-03-rasenmaeher.jpg</b><i>4:5</i></div></div>
+        <div class="st__media"><img src="station-03-rasenmaeher.jpg" width="880" height="1100" loading="lazy" alt="Ein Rasenmäher im Garten, darunter liegt eine Figur"></div>
       </article>
 
       <article class="st rv">
@@ -601,7 +612,7 @@ p{margin:0 0 1.15em; max-width:68ch}
           <h3 class="h3 st__t">Der Häcksler</h3>
           <p class="muted">Ganz vorne am Gehweg, direkt neben dem Zaun. Zwei Hände verschwinden darin. Näher rangehen darf man trotzdem.</p>
         </div>
-        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Ein Gartenhäcksler am Zaun, aus dem zwei Hände herausragen"><b>station-04-haecksler.jpg</b><i>4:5</i></div></div>
+        <div class="st__media"><img src="station-04-haecksler.jpg" width="880" height="1100" loading="lazy" alt="Ein Gartenhäcksler, aus dem Körperteile herausragen"></div>
       </article>
 
       <article class="st rv">
@@ -611,7 +622,7 @@ p{margin:0 0 1.15em; max-width:68ch}
           <h3 class="h3 st__t">Das Netz</h3>
           <p class="muted">Über Büsche, Bäume und den kompletten Zaun ziehen sich unzählige Spinnweben. Man sieht sie erst, wenn man schon drinsteht.</p>
         </div>
-        <div class="st__media"><div class="ph r-4-5" role="img" aria-label="Dichte künstliche Spinnweben über Büschen, Bäumen und dem Gartenzaun"><b>station-05-netz.jpg</b><i>4:5</i></div></div>
+        <div class="st__media"><img src="station-05-netz.jpg" width="880" height="1100" loading="lazy" alt="Dichte künstliche Spinnweben über Büschen und Zaun im grünen Licht"></div>
       </article>
     </div>
 
@@ -653,6 +664,9 @@ p{margin:0 0 1.15em; max-width:68ch}
       <button class="tab" role="tab" aria-selected="false" data-year="2025">2025</button>
       <button class="tab" role="tab" aria-selected="false" data-year="2024">2024</button>
       <button class="tab" role="tab" aria-selected="false" data-year="2023">2023</button>
+      <button class="tab" role="tab" aria-selected="false" data-year="2022">2022</button>
+      <button class="tab" role="tab" aria-selected="false" data-year="2021">2021</button>
+      <button class="tab" role="tab" aria-selected="false" data-year="2020">2020</button>
     </div>
 
     <div class="gal" id="gal">
@@ -705,18 +719,19 @@ p{margin:0 0 1.15em; max-width:68ch}
         <h2 class="h2">So findest<br>du uns</h2>
         <p class="addr" style="margin-top:1.8rem">
           <strong>Rödentaler Horrorhaus</strong><br>
-          [[PLATZHALTER: Straße und Hausnummer]]<br>
+          Einberger Straße 68a<br>
           96472 Rödental-Einberg
         </p>
         <p class="muted" style="margin-top:1.4rem">Aus Coburg über die B4 Richtung Neustadt, in Rödental Abfahrt Einberg. Aus Neustadt kommend dasselbe in umgekehrter Richtung. Der Bus hält im Ortskern, von dort sind es etwa fünf Minuten zu Fuß.</p>
         <p class="muted">Parken kannst du auf der Straße im Wohngebiet. Bitte such dir eine Lücke, die keine Einfahrt blockiert — die Nachbarn ertragen den Trubel jedes Jahr sehr geduldig.</p>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=R%C3%B6dental+Einberg" target="_blank" rel="noopener" style="margin-top:1rem">In Google Maps öffnen</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Einberger+Stra%C3%9Fe+68a+96472+R%C3%B6dental" target="_blank" rel="noopener" style="margin-top:1rem">In Google Maps öffnen</a>
       </div>
       <div class="rv">
         <div class="map">
-          <div class="ph r-4-5" role="img" aria-label="Kartenausschnitt von Rödental-Einberg mit der Lage des Horrorhauses"><b>karte-einberg.jpg</b><i>4:5 — statisches Kartenbild</i></div>
+          <img src="anfahrt-haus.jpg" width="1300" height="867" loading="lazy"
+               alt="Das Haus in der Einberger Straße bei Tageslicht, von der Straße aus gesehen">
         </div>
-        <p class="type muted" style="font-size:.75rem; margin-top:.8rem; letter-spacing:.05em">Interaktive Karte wird aus Datenschutzgründen erst nach Klick geladen.</p>
+        <p class="type muted" style="font-size:.75rem; margin-top:.8rem; letter-spacing:.05em">So sieht es tagsüber aus. Im Oktober ist es schwer zu übersehen.</p>
       </div>
     </div>
   </div>
@@ -744,8 +759,8 @@ p{margin:0 0 1.15em; max-width:68ch}
       <p class="eyebrow">Presse</p>
       <h2 class="h2">Darüber wurde<br>geschrieben</h2>
       <div class="press">
-        <a class="press__n" href="[[PLATZHALTER: Artikel-Link]]">Neue Presse Coburg</a>
-        <a class="press__n" href="[[PLATZHALTER: Artikel-Link]]">Fränkischer Tag</a>
+        <span class="press__n">Neue Presse Coburg</span>
+        <span class="press__n">Fränkischer Tag</span>
       </div>
       <p class="type muted" style="margin-top:2rem; font-size:.9375rem; letter-spacing:.04em; max-width:46ch">Presseanfragen und Drehgenehmigungen bitte vorab über das Kontaktformular — spontan vor Ort geht im Trubel unter.</p>
     </div>
@@ -763,7 +778,7 @@ p{margin:0 0 1.15em; max-width:68ch}
     <div class="trio">
       <div class="card rv">
         <h3 class="h3">Spenden</h3>
-        <p>Vor der Einfahrt steht eine Box. Was reinkommt, geht in Material für das nächste Jahr und in [[PLATZHALTER: Spendenzweck]].</p>
+        <p>Vor der Einfahrt steht eine Box. Was reinkommt, geht komplett in Material für das nächste Jahr.</p>
         <a class="btn btn--ghost" href="#kontakt">Mehr dazu erfahren</a>
       </div>
       <div class="card rv">
@@ -790,12 +805,12 @@ p{margin:0 0 1.15em; max-width:68ch}
       <a class="btn" href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Auf Instagram folgen</a>
     </div>
     <div class="ig">
-      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Aufbau im Garten"><b>instagram-01.jpg</b><i>1:1</i></div>
-      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Detail einer Figur"><b>instagram-02.jpg</b><i>1:1</i></div>
-      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Nebel im Vorgarten"><b>instagram-03.jpg</b><i>1:1</i></div>
-      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Besucher am Zaun"><b>instagram-04.jpg</b><i>1:1</i></div>
-      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Kostüm-Detail"><b>instagram-05.jpg</b><i>1:1</i></div>
-      <div class="ph r-1-1" role="img" aria-label="Instagram-Beitrag: Der Sarg bei Nacht"><b>instagram-06.jpg</b><i>1:1</i></div>
+      <img class="ig__i" src="instagram-01.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Aufbau im Garten">
+      <img class="ig__i" src="instagram-02.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Detail einer Figur">
+      <img class="ig__i" src="instagram-03.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Nebel im Vorgarten">
+      <img class="ig__i" src="instagram-04.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Besucher am Zaun">
+      <img class="ig__i" src="instagram-05.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Kostüm-Detail">
+      <img class="ig__i" src="instagram-06.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Der Sarg bei Nacht">
     </div>
   </div>
 </section>
@@ -851,7 +866,6 @@ p{margin:0 0 1.15em; max-width:68ch}
     </div>
     <div class="foot__bar">
       <span>© <span id="year">2026</span> Rödentaler Horrorhaus</span>
-      <span>Gestaltung &amp; Umsetzung: Klarnetz</span>
     </div>
   </div>
 </footer>
@@ -862,7 +876,7 @@ p{margin:0 0 1.15em; max-width:68ch}
   <button class="lb__btn lb__p" id="lb-p" aria-label="Vorheriges Bild">‹</button>
   <button class="lb__btn lb__n" id="lb-n" aria-label="Nächstes Bild">›</button>
   <div class="lb__stage">
-    <div class="ph r-3-2" id="lb-img" role="img" aria-label="Vergrößertes Bild aus der Galerie"><b>—</b><i>—</i></div>
+    <img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
     <p class="lb__cap" id="lb-cap"></p>
   </div>
 </div>
@@ -966,18 +980,24 @@ p{margin:0 0 1.15em; max-width:68ch}
 
   /* ---------- Galerie ---------- */
   var BILDER = [
-    {f:'galerie-01.jpg', r:'r-4-5', j:'2025', a:'Die drei Wächter in grünem Licht vor der Hauswand'},
-    {f:'galerie-02.jpg', r:'r-1-1', j:'2025', a:'Nebel zieht über den offenen Sarg im Vorgarten'},
-    {f:'galerie-03.jpg', r:'r-3-2', j:'2025', a:'Besucher stehen am Zaun und schauen in den Garten'},
-    {f:'galerie-04.jpg', r:'r-4-5', j:'2025', a:'Der Totengräber mit Schaufel neben dem frischen Grab'},
-    {f:'galerie-05.jpg', r:'r-1-1', j:'2024', a:'Detailaufnahme des Häckslers am Gehweg'},
-    {f:'galerie-06.jpg', r:'r-3-2', j:'2024', a:'Das gesamte Haus bei Nacht in grüner Beleuchtung'},
-    {f:'galerie-07.jpg', r:'r-4-5', j:'2024', a:'Spinnweben über den Büschen im Vorgarten'},
-    {f:'galerie-08.jpg', r:'r-1-1', j:'2024', a:'Christian Müller im Kostüm begrüßt Besucher'},
-    {f:'galerie-09.jpg', r:'r-3-2', j:'2023', a:'Der fahrerlose Rasenmäher im hinteren Garten'},
-    {f:'galerie-10.jpg', r:'r-4-5', j:'2023', a:'Beleuchtete Grabsteine entlang des Gartenwegs'},
-    {f:'galerie-11.jpg', r:'r-1-1', j:'2023', a:'Kerzenlicht und Nebel am Eingang zum Rundgang'},
-    {f:'galerie-12.jpg', r:'r-3-2', j:'2023', a:'Blick vom Gehweg auf das komplett dekorierte Grundstück'}
+    {f:'galerie-01.jpg', j:'2020', w:681, h:1400, a:'Erste Halloween-Deko: geschnitzte Kürbisse auf dem Tisch'},
+    {f:'galerie-02.jpg', j:'2021', w:1400, h:1050, a:'Der Vorgarten am Tag, schon voll mit Figuren und Grabsteinen'},
+    {f:'galerie-03.jpg', j:'2022', w:1400, h:788, a:'Das Haus bei Nacht in grünem Licht'},
+    {f:'galerie-04.jpg', j:'2022', w:1400, h:790, a:'Grün beleuchtete Hausfront mit Dekoration im Vorgarten'},
+    {f:'galerie-05.jpg', j:'2023', w:1400, h:788, a:'Der komplette Garten bei Nacht, grün ausgeleuchtet'},
+    {f:'galerie-06.jpg', j:'2023', w:1400, h:788, a:'Blick von der Straße auf das beleuchtete Grundstück'},
+    {f:'galerie-07.jpg', j:'2024', w:787, h:1400, a:'Riesige Spinne an der grün beleuchteten Hauswand'},
+    {f:'galerie-08.jpg', j:'2024', w:879, h:1400, a:'Die Hausfront mit Straßenlaterne und Nebel'},
+    {f:'galerie-09.jpg', j:'2024', w:1400, h:788, a:'Das Anwesen bei Nacht von der Straße aus'},
+    {f:'galerie-10.jpg', j:'2024', w:787, h:1400, a:'Grün und rot ausgeleuchtete Ecke des Gartens'},
+    {f:'galerie-11.jpg', j:'2024', w:787, h:1400, a:'Rot beleuchteter Baum über dem Vorgarten'},
+    {f:'galerie-12.jpg', j:'2024', w:787, h:1400, a:'Spinnweben und Absperrband am Gartenzaun'},
+    {f:'galerie-13.jpg', j:'2025', w:788, h:1400, a:'Dichte grüne Spinnweben zwischen den Büschen'},
+    {f:'galerie-14.jpg', j:'2025', w:1400, h:788, a:'Das Haus bei Nacht, von der gegenüberliegenden Straßenseite'},
+    {f:'galerie-15.jpg', j:'2025', w:1400, h:788, a:'Grün und blau beleuchtete Hausfront am Abend'},
+    {f:'galerie-16.jpg', j:'2025', w:788, h:1400, a:'Grabsteine im grünen Licht entlang des Gartenwegs'},
+    {f:'galerie-17.jpg', j:'2025', w:788, h:1400, a:'Skelettartige Figuren im nebligen Gebüsch'},
+    {f:'galerie-18.jpg', j:'2025', w:788, h:1400, a:'Knochenhände greifen aus dem grün beleuchteten Bewuchs'}
   ];
   var gal = $('#gal'), spot = $('.gal__spot'), sicht = BILDER.slice();
 
@@ -990,7 +1010,7 @@ p{margin:0 0 1.15em; max-width:68ch}
       btn.type = 'button';
       btn.setAttribute('aria-label', 'Bild vergrößern: ' + b.a);
       btn.dataset.i = String(i);
-      btn.innerHTML = '<div class="ph ' + b.r + '" role="img" aria-label="' + b.a + '"><b>' + b.f + '</b><i>' + b.r.replace('r-','').replace(/-/g,':') + '</i></div>';
+      btn.innerHTML = '<img src="' + b.f + '" width="' + b.w + '" height="' + b.h + '" loading="lazy" alt="' + b.a + '">';
       btn.addEventListener('click', function(){ openLb(+btn.dataset.i) });
       gal.appendChild(btn);
     });
@@ -1026,10 +1046,8 @@ p{margin:0 0 1.15em; max-width:68ch}
   var lb=$('#lb'), lbImg=$('#lb-img'), lbCap=$('#lb-cap'), idx=0, lastFocus=null;
   function paint(){
     var b = sicht[idx];
-    lbImg.className = 'ph ' + b.r;
-    lbImg.innerHTML = '<b>' + b.f + '</b><i>' + b.r.replace('r-','').replace(/-/g,':') + '</i>';
-    lbImg.setAttribute('role','img');
-    lbImg.setAttribute('aria-label', b.a);
+    lbImg.src = '' + b.f;
+    lbImg.alt = b.a;
     lbCap.textContent = b.a + '  ·  ' + b.j + '  ·  ' + (idx+1) + ' von ' + sicht.length;
   }
   function openLb(i){
@@ -1181,7 +1199,7 @@ p{margin:0 0 1.15em; max-width:68ch}
 
     // TODO Livegang: hier den echten Formular-Endpunkt anbinden (z. B. Formspree, Web3Forms
     // oder eine eigene Funktion). Bis dahin öffnet sich das E-Mail-Programm.
-    var to = 'kontakt@roedentaler-horrorhaus.de';
+    var to = 'mc83@web.de';
     var body = 'Name: ' + name + '\nE-Mail: ' + mail + '\nThema: ' + topic + '\n\n' + msg;
     window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('[' + topic + '] Anfrage über die Website') + '&body=' + encodeURIComponent(body);
     say('Dein E-Mail-Programm öffnet sich.');

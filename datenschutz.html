@@ -8,10 +8,14 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M16 5c-5 0-9 4-9 9v8l3-2 3 2 3-2 3 2 3-2 3 2v-8c0-5-4-9-9-9z' fill='%237CFF2E'/%3E%3Ccircle cx='12' cy='14' r='2' fill='%23000'/%3E%3Ccircle cx='20' cy='14' r='2' fill='%23000'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Nosifer&family=Special+Elite&display=swap" rel="stylesheet">
+
 <style>
+@font-face{font-family:'Nosifer';src:url('Nosifer-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Anton';src:url('Anton-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Special Elite';src:url('SpecialElite-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+
 :root{--void:#000;--soil:#0A0D08;--slime:#7CFF2E;--moss:#2F5C18;--blood:#8B0F0F;--bone:#EDEDE6;--fog:#8A9186;
 --f-display:'Nosifer','Impact',fantasy;--f-head:'Anton','Haettenschweiler','Arial Narrow',sans-serif;
 --f-body:'Barlow',system-ui,sans-serif;--f-type:'Special Elite','Courier New',monospace;
@@ -74,24 +78,24 @@ text-shadow:0 4px 0 var(--moss),0 0 42px rgba(124,255,46,.28);margin:0 0 1.5rem}
 
 <h2>1. Verantwortliche Stelle</h2>
 <p class="block">
-<span class="ph-txt">[[PLATZHALTER: Vor- und Nachname]]</span><br>
-<span class="ph-txt">[[PLATZHALTER: Stra&szlig;e und Hausnummer]]</span><br>
+Christian M&uuml;ller<br>
+Einberger Stra&szlig;e 68a<br>
 96472 R&ouml;dental<br>
-E-Mail: <span class="ph-txt">[[PLATZHALTER: E-Mail-Adresse]]</span>
+E-Mail: <a href="mailto:mc83@web.de">mc83@web.de</a>
 </p>
 
 <h2>2. Hosting und Server-Logfiles</h2>
-<p class="muted">Diese Website wird bei <span class="ph-txt">[[PLATZHALTER: Name und Anschrift des Hosters]]</span> gehostet. Beim Aufruf der Seite erhebt der Hostinganbieter automatisch Informationen, die Ihr Browser &uuml;bermittelt (sogenannte Server-Logfiles): Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.</p>
-<p class="muted">Diese Daten werden nicht mit anderen Datenquellen zusammengef&uuml;hrt und dienen ausschlie&szlig;lich dem sicheren und stabilen Betrieb der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Darstellung). Mit dem Anbieter besteht ein Vertrag &uuml;ber Auftragsverarbeitung gem&auml;&szlig; Art. 28 DSGVO. Die Logfiles werden nach <span class="ph-txt">[[PLATZHALTER: z. B. 7 Tagen]]</span> gel&ouml;scht.</p>
+<p class="muted">Diese Website wird bei Cloudflare Inc., 101 Townsend Street, San Francisco, CA 94107, USA gehostet. Beim Aufruf der Seite erhebt der Hostinganbieter automatisch Informationen, die Ihr Browser &uuml;bermittelt (sogenannte Server-Logfiles): Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.</p>
+<p class="muted">Diese Daten werden nicht mit anderen Datenquellen zusammengef&uuml;hrt und dienen ausschlie&szlig;lich dem sicheren und stabilen Betrieb der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Darstellung). Mit dem Anbieter besteht ein Vertrag &uuml;ber Auftragsverarbeitung gem&auml;&szlig; Art. 28 DSGVO. Die Logfiles werden sp&auml;testens nach sieben Tagen gel&ouml;scht.</p>
 
 <h2>3. Kontaktformular und E-Mail</h2>
 <p class="muted">Wenn Sie uns &uuml;ber das Formular oder per E-Mail kontaktieren, speichern wir Ihre Angaben (Name, E-Mail-Adresse, gew&auml;hltes Thema, Nachricht) zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen, ansonsten Art. 6 Abs. 1 lit. f DSGVO. Ihre Daten geben wir nicht ohne Ihre Einwilligung weiter und l&ouml;schen sie, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
 
 <h2>4. Schriftarten</h2>
-<p class="muted">Die verwendeten Schriftarten werden lokal von unserem eigenen Server ausgeliefert. Es besteht keine Verbindung zu Servern von Google, und es werden keine Daten an Dritte &uuml;bertragen.</p>
+<p class="muted">Die verwendeten Schriftarten (Anton, Barlow, Nosifer und Special Elite) werden lokal von unserem eigenen Server ausgeliefert. Es besteht keine Verbindung zu Servern von Google, und es werden dabei keine Daten an Dritte &uuml;bertragen.</p>
 
 <h2>5. Kartendienst</h2>
-<p class="muted">Auf der Seite &bdquo;Anfahrt&ldquo; zeigen wir zun&auml;chst nur ein statisches Kartenbild. Eine interaktive Karte von Google Maps wird erst geladen, wenn Sie aktiv darauf klicken. Erst dann werden Daten &mdash; insbesondere Ihre IP-Adresse &mdash; an Google &uuml;bertragen. Rechtsgrundlage f&uuml;r diese Verarbeitung ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie mit dem Klick erteilen und jederzeit widerrufen k&ouml;nnen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+<p class="muted">Wir binden keine Karte direkt auf der Seite ein. Im Abschnitt &bdquo;Anfahrt&ldquo; befindet sich lediglich ein gew&ouml;hnlicher Link zu Google Maps. Erst wenn Sie diesen anklicken, verlassen Sie unsere Website und es werden Daten &mdash; insbesondere Ihre IP-Adresse &mdash; an Google &uuml;bertragen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Es gilt dann deren Datenschutzerkl&auml;rung.</p>
 
 <h2>6. Verlinkung zu Instagram</h2>
 <p class="muted">Wir binden keine Inhalte von Instagram direkt ein. Auf unserer Seite befindet sich lediglich ein gew&ouml;hnlicher Link zu unserem Profil. Beim Anklicken verlassen Sie diese Website; es gilt dann die Datenschutzerkl&auml;rung von Meta Platforms Ireland Ltd.</p>
@@ -116,14 +120,14 @@ E-Mail: <span class="ph-txt">[[PLATZHALTER: E-Mail-Adresse]]</span>
 <p class="muted">Diese Seite nutzt aus Sicherheitsgr&uuml;nden eine SSL/TLS-Verschl&uuml;sselung. Eine verschl&uuml;sselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers mit &bdquo;https://&ldquo; beginnt.</p>
 
 <h2>10. &Auml;nderungen</h2>
-<p class="muted">Wir passen diese Datenschutzerkl&auml;rung an, sobald sich die Rechtslage oder unsere Website &auml;ndert. Stand: <span class="ph-txt">[[PLATZHALTER: Monat Jahr]]</span></p>
+<p class="muted">Wir passen diese Datenschutzerkl&auml;rung an, sobald sich die Rechtslage oder unsere Website &auml;ndert. Stand: August 2026</p>
 
-<p class="muted" style="margin-top:3rem;font-size:.9rem">Hinweis f&uuml;r den Livegang: Diese Erkl&auml;rung ist eine sorgf&auml;ltig vorbereitete Vorlage und ersetzt keine Rechtsberatung. Bitte vor der Ver&ouml;ffentlichung durch die verantwortliche Person pr&uuml;fen und die Platzhalter ausf&uuml;llen.</p>
+
 
 </main>
 <footer class="foot"><div class="foot__in">
   <span>&copy; <span id="y">2026</span> R&ouml;dentaler Horrorhaus</span>
-  <span><a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="datenschutz.html">Datenschutz</a> &nbsp;&middot;&nbsp; Gestaltung: Klarnetz</span>
+  <span><a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>

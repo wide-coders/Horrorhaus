@@ -8,10 +8,14 @@
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M16 5c-5 0-9 4-9 9v8l3-2 3 2 3-2 3 2 3-2 3 2v-8c0-5-4-9-9-9z' fill='%237CFF2E'/%3E%3Ccircle cx='12' cy='14' r='2' fill='%23000'/%3E%3Ccircle cx='20' cy='14' r='2' fill='%23000'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Nosifer&family=Special+Elite&display=swap" rel="stylesheet">
+
 <style>
+@font-face{font-family:'Nosifer';src:url('Nosifer-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Anton';src:url('Anton-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Special Elite';src:url('SpecialElite-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Barlow';src:url('Barlow-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+
 :root{--void:#000;--soil:#0A0D08;--slime:#7CFF2E;--moss:#2F5C18;--blood:#8B0F0F;--bone:#EDEDE6;--fog:#8A9186;
 --f-display:'Nosifer','Impact',fantasy;--f-head:'Anton','Haettenschweiler','Arial Narrow',sans-serif;
 --f-body:'Barlow',system-ui,sans-serif;--f-type:'Special Elite','Courier New',monospace;
@@ -33,7 +37,7 @@ a:hover{text-decoration:underline;text-underline-offset:.25em}
 .nav__back{margin-left:auto;font-family:var(--f-head);text-transform:uppercase;font-size:.8125rem;letter-spacing:.08em;color:var(--bone)}
 .nav__back:hover{color:var(--slime);text-decoration:none}
 main{max-width:var(--maxw);margin-inline:auto;padding:clamp(3rem,8vw,6rem) var(--pad) clamp(4rem,9vw,7rem)}
-h1{font-family:var(--f-head);text-transform:uppercase;font-size:clamp(2.2rem,6vw,4rem);line-height:.95;letter-spacing:.02em;margin:0 0 2.5rem;font-weight:400}
+main h1:not(.h-display){font-family:var(--f-head);text-transform:uppercase;font-size:clamp(2.2rem,6vw,4rem);line-height:.95;letter-spacing:.02em;margin:0 0 2.5rem;font-weight:400}
 h2{font-family:var(--f-head);text-transform:uppercase;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.1;letter-spacing:.02em;margin:2.8rem 0 .9rem;font-weight:400}
 p{margin:0 0 1.15em;max-width:68ch}
 .eyebrow{font-family:var(--f-type);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slime);margin:0 0 1rem}
@@ -69,7 +73,7 @@ text-shadow:0 4px 0 var(--moss),0 0 42px rgba(124,255,46,.28);margin:0 0 1.5rem}
 
 <div class="center">
   <p class="eyebrow">Fehler 404</p>
-  <p class="h-display">Diese Seite<br>ist im Keller</p>
+  <h1 class="h-display">Diese Seite<br>ist im Keller</h1>
   <p class="muted">Wir suchen sie nicht. Du solltest das auch nicht tun.</p>
   <a class="btn" href="index.html">Zur&uuml;ck ans Licht</a>
 </div>
@@ -77,7 +81,7 @@ text-shadow:0 4px 0 var(--moss),0 0 42px rgba(124,255,46,.28);margin:0 0 1.5rem}
 </main>
 <footer class="foot"><div class="foot__in">
   <span>&copy; <span id="y">2026</span> R&ouml;dentaler Horrorhaus</span>
-  <span><a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="datenschutz.html">Datenschutz</a> &nbsp;&middot;&nbsp; Gestaltung: Klarnetz</span>
+  <span><a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
