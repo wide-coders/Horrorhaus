@@ -48,7 +48,7 @@
         "postalCode": "96472",
         "addressCountry": "DE"
       },
-      "sameAs": ["https://www.instagram.com/roedentaler_horrorhaus/"]
+      "sameAs": ["https://www.instagram.com/roedentaler_horrorhaus/", "https://www.facebook.com/share/1coB5uWwTe/", "https://www.tiktok.com/@roedentaler_horror"]
     },
     {
       "@type": "Event",
@@ -157,6 +157,7 @@ p{margin:0 0 1.15em; max-width:68ch}
   background:var(--slime); color:#000; cursor:pointer;
   transition:transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
 }
+.btn[disabled]{opacity:.55; cursor:default; transform:none; box-shadow:none}
 .btn:hover{text-decoration:none; transform:translateY(-2px); box-shadow:0 8px 0 -2px var(--moss), 0 0 34px rgba(124,255,46,.35)}
 .btn--ghost{background:transparent; color:var(--slime)}
 .btn--ghost:hover{background:rgba(124,255,46,.1)}
@@ -342,6 +343,11 @@ p{margin:0 0 1.15em; max-width:68ch}
   cursor:pointer; display:block; transition:filter .35s var(--ease), transform .35s var(--ease);
 }
 .gal__i img{width:100%; height:auto; display:block; border:1px solid rgba(47,92,24,.55)}
+.tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; position:relative; z-index:2; margin-left:clamp(2.6rem,6vw,5.2rem)}
+.tiles img{width:100%; height:100%; aspect-ratio:3/4; object-fit:cover; border:1px solid var(--moss); display:block}
+.social{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap}
+#instagram p{margin-inline:auto}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr); margin-left:2.4rem}}
 .ig__i{width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border:1px solid var(--moss)}
 .cols img{width:100%; height:auto; border:1px solid var(--moss)}
 .map img{width:100%; height:auto; display:block}
@@ -542,17 +548,18 @@ p{margin:0 0 1.15em; max-width:68ch}
   <div class="wrap">
     <div class="cols">
       <div class="rv">
-        <p class="eyebrow">Die Geschichte</p>
-        <h2 class="h2">Angefangen hat alles<br>mit einem Kind</h2>
-        <p class="lead" style="margin-top:1.6rem">Tom wollte zu Halloween etwas Gruseliges bauen. Ein paar Spinnweben, ein Skelett, mehr war nicht geplant.</p>
-        <p class="muted">Daraus ist ein Projekt geworden, an dem Vater und Sohn das halbe Jahr basteln. Jedes Jahr kommt etwas dazu — eine Figur, ein Effekt, eine neue Ecke im Garten. Seit die Zeitung das erste Mal darüber geschrieben hat, stehen im Oktober Leute aus dem ganzen Landkreis vor dem Zaun.</p>
-        <p class="muted">Das Horrorhaus ist kein Freizeitpark. Es ist ein Vorgarten in Einberg, in den eine Familie sehr viel Zeit steckt. Deshalb kostet es nichts, deshalb gibt es keine Tickets, und deshalb ist es jedes Jahr anders.</p>
-        <blockquote class="quote"><span>„</span>Wir bauen das ganze Jahr. Für vier Abende.<span>“</span></blockquote>
+        <p class="eyebrow">Unsere Geschichte</p>
+        <h2 class="h2">Alles begann mit<br>einer Idee von Tom</h2>
+        <p class="lead" style="margin-top:1.6rem">Mit gerade einmal zwölf Jahren fing er an, unser Zuhause zu Halloween zu dekorieren. Aus ein paar Figuren und ersten selbst gebauten Kulissen entstand Jahr für Jahr etwas Größeres.</p>
+        <p class="muted">Tom ist der Erschaffer und kreative Kopf des Rödentaler Horrorhauses. Viele Figuren, Kulissen und Effekte entstehen aus seinen Ideen und werden von uns als Familie gemeinsam gebaut und umgesetzt.</p>
+        <p class="muted">Heute ist das Horrorhaus unser Familienprojekt. Wir planen, bauen und basteln das ganze Jahr — für die wenigen Abende im Oktober, an denen sich unser Zuhause in eine schaurige Welt verwandelt.</p>
+        <p class="muted">Was uns dabei am wichtigsten ist: Wir möchten Menschen zusammenbringen, begeistern und ihnen ein besonderes Halloween-Erlebnis schenken. Aus Toms Idee wurde unsere Familientradition. Aus unserem Vorgarten wurde das Rödentaler Horrorhaus.</p>
+        <blockquote class="quote"><span>„</span>Nach Halloween ist vor Halloween.<span>“</span></blockquote>
       </div>
       <div class="rv">
         <img src="geschichte.jpg" width="1500" height="1000" loading="lazy"
-             alt="Vater und Sohn vor der dekorierten Hausfront, über ihnen eine große Gestalt mit ausgebreiteten Armen">
-        <p class="type muted" style="font-size:.8125rem; margin-top:.8rem; letter-spacing:.05em">Vater und Sohn vor der Kulisse.</p>
+             alt="Tom, der Erschaffer des Horrorhauses, mit seinem Vater Christian vor der dekorierten Hausfront">
+        <p class="type muted" style="font-size:.8125rem; margin-top:.8rem; letter-spacing:.05em">Tom — der Erschaffer des Horrorhauses — mit seinem Vater Christian.</p>
       </div>
     </div>
   </div>
@@ -571,62 +578,23 @@ p{margin:0 0 1.15em; max-width:68ch}
     </div>
     <div class="rv walk__intro" style="margin-bottom:clamp(2.5rem,6vw,4.5rem)">
       <p class="eyebrow">Der Rundgang</p>
-      <h2 class="h2">Fünf Stationen<br>bis zur Haustür</h2>
+      <h2 class="h2">Horror rund<br>ums Haus</h2>
+      <p class="lead muted" style="margin-top:1.6rem">Der Rundgang führt euch auf dem Gehweg rund um unser Haus. Entlang der Strecke erwarten euch jedes Jahr neue Kulissen, Figuren und schaurige Überraschungen.</p>
+      <p class="muted">Das Grundstück selbst wird nicht betreten.</p>
     </div>
 
-    <div class="stations" id="stations">
-      <article class="st rv">
-        <span class="st__dot" aria-hidden="true"></span>
-        <div>
-          <span class="st__num">Station 01</span>
-          <h3 class="h3 st__t">Die Wächter</h3>
-          <p class="muted">Drei mannshohe Gestalten in langen Gewändern stehen in grünes Licht getaucht vor der Hauswand. Ihr Blick geht nach unten, auf den Sarg zu ihren Füßen.</p>
-        </div>
-        <div class="st__media"><img src="station-01-waechter.jpg" width="880" height="1100" loading="lazy" alt="Drei hohe Gestalten in langen Gewändern stehen in grünem Licht vor der Hauswand, davor ein Grabstein"></div>
-      </article>
-
-      <article class="st rv">
-        <span class="st__dot" aria-hidden="true"></span>
-        <div>
-          <span class="st__num">Station 02</span>
-          <h3 class="h3 st__t">Das frische Grab</h3>
-          <p class="muted">Der Totengräber hat schon angefangen. Die Schaufel steckt noch im Loch, der Sarg wartet daneben. Für wen, sagt niemand.</p>
-        </div>
-        <div class="st__media"><img src="station-02-grab.jpg" width="880" height="1100" loading="lazy" alt="Grabsteine und Skelette im grün beleuchteten Vorgarten"></div>
-      </article>
-
-      <article class="st rv">
-        <span class="st__dot" aria-hidden="true"></span>
-        <div>
-          <span class="st__num">Station 03</span>
-          <h3 class="h3 st__t">Der Rasenmäher</h3>
-          <p class="muted">Im Garten läuft ein Mäher ohne Fahrer. Jemand hat ihn zu spät kommen sehen. Der Rasen ist an dieser Stelle sehr rot.</p>
-        </div>
-        <div class="st__media"><img src="station-03-rasenmaeher.jpg" width="880" height="1100" loading="lazy" alt="Ein Rasenmäher im Garten, darunter liegt eine Figur"></div>
-      </article>
-
-      <article class="st rv">
-        <span class="st__dot" aria-hidden="true"></span>
-        <div>
-          <span class="st__num">Station 04</span>
-          <h3 class="h3 st__t">Der Häcksler</h3>
-          <p class="muted">Ganz vorne am Gehweg, direkt neben dem Zaun. Zwei Hände verschwinden darin. Näher rangehen darf man trotzdem.</p>
-        </div>
-        <div class="st__media"><img src="station-04-haecksler.jpg" width="880" height="1100" loading="lazy" alt="Ein Gartenhäcksler, aus dem Körperteile herausragen"></div>
-      </article>
-
-      <article class="st rv">
-        <span class="st__dot" aria-hidden="true"></span>
-        <div>
-          <span class="st__num">Station 05</span>
-          <h3 class="h3 st__t">Das Netz</h3>
-          <p class="muted">Über Büsche, Bäume und den kompletten Zaun ziehen sich unzählige Spinnweben. Man sieht sie erst, wenn man schon drinsteht.</p>
-        </div>
-        <div class="st__media"><img src="station-05-netz.jpg" width="880" height="1100" loading="lazy" alt="Dichte künstliche Spinnweben über Büschen und Zaun im grünen Licht"></div>
-      </article>
+    <div class="tiles rv">
+        <img src="rundgang-01.jpg" width="788" height="1400" loading="lazy" alt="Sensenmann mit freiliegendem Brustkorb hält einen Totenschädel, in grünem Licht vor der Hauswand">
+        <img src="rundgang-06.jpg" width="788" height="1400" loading="lazy" alt="Hohe Gestalt in wallendem Gewand mit ausgebreiteten Armen vor der beleuchteten Hauswand">
+        <img src="rundgang-05.jpg" width="788" height="1400" loading="lazy" alt="Sensenmann hinter einer zersplitterten Scheibe voller Spinnweben">
+        <img src="rundgang-04.jpg" width="788" height="1400" loading="lazy" alt="Grün geschminkter Clown über der Kulisse einer alten Verkaufsbude">
+        <img src="rundgang-03.jpg" width="788" height="1400" loading="lazy" alt="Clown unter einem roten Schirm hinter einem beleuchteten Verkaufsstand">
+        <img src="rundgang-02.jpg" width="788" height="1400" loading="lazy" alt="Weiß geschminkte Gestalt auf einem Motorrad zwischen roten Lichtern">
+        <img src="rundgang-07.jpg" width="800" height="1200" loading="lazy" alt="Gartenhäcksler, aus dem Hände und Füße ragen, in rotem Licht">
+        <img src="rundgang-08.jpg" width="1200" height="801" loading="lazy" alt="Mehrere Gestalten in Gewändern hinter einer Absperrung im grünen Licht">
     </div>
 
-    <p class="walk__end rv">„Und das ist nur das, was von der Straße aus zu sehen ist.“</p>
+    <p class="walk__end rv">„Und jedes Jahr kommt etwas dazu.“</p>
   </div>
 </section>
 
@@ -634,16 +602,43 @@ p{margin:0 0 1.15em; max-width:68ch}
 <section class="section" id="termine">
   <div class="wrap">
     <div class="rv">
-      <p class="eyebrow">Termine &amp; Öffnungszeiten</p>
-      <h2 class="h2">Wann es<br>offen ist</h2>
-      <p class="lead muted" style="margin-top:1.5rem">Der Rundgang ist nur an wenigen Abenden im Oktober begehbar. Danach wird abgebaut — bis zum nächsten Jahr.</p>
+      <p class="eyebrow">Termine &amp; Zeiten</p>
+      <h2 class="h2">Wenn das<br>Horrorhaus erwacht</h2>
+      <p class="lead" style="margin-top:1.6rem">Etwa zwei Wochen vor Halloween verwandelt sich das Haus Sonnenschein in das Rödentaler Horrorhaus.</p>
+      <p class="muted">Sobald der Aufbau abgeschlossen ist, wird das Horrorhaus täglich ab Einbruch der Dunkelheit bis zum Sonnenaufgang beleuchtet. Musik und Animatronics erwachen ebenfalls mit Einbruch der Dunkelheit zum Leben und laufen bis 21:00 Uhr.</p>
+      <p class="muted">An Halloween, dem 31. Oktober, geht es länger: Musik, Effekte und Animatronics laufen an diesem Abend bis 23:00 Uhr.</p>
     </div>
 
-    <div class="dates" id="dates"></div>
+    <div class="dates">
+      <article class="date rv">
+        <span class="date__tag">Ab Mitte Oktober</span>
+        <div class="date__d">Jeden Abend</div>
+        <div class="date__wd">sobald der Aufbau steht</div>
+        <div class="date__t">bis Sonnenaufgang beleuchtet</div>
+        <p class="date__n">Musik und Animatronics laufen ab Einbruch der Dunkelheit bis 21:00 Uhr.</p>
+      </article>
+      <article class="date date--hl rv">
+        <span class="date__tag">Das große Finale</span>
+        <div class="date__d">31. Oktober</div>
+        <div class="date__wd">Halloween</div>
+        <div class="date__t">Effekte bis 23:00 Uhr</div>
+        <p class="date__n">Der Abend, an dem alles läuft. 14 Familienmitglieder und Helfer sind im Einsatz.</p>
+      </article>
+    </div>
+
+    <div class="panel rv" style="margin-top:2.2rem">
+      <p class="eyebrow" style="margin-bottom:.5rem">Das große Finale</p>
+      <h3 class="h3" style="margin-bottom:1.3rem">Halloween in Einberg</h3>
+      <p class="muted">Am 31. Oktober erwacht das Rödentaler Horrorhaus richtig zum Leben. An diesem Abend sind wir mit 14 Familienmitgliedern und Helfern im Einsatz. Verkleidete Gestalten lauern zwischen den Kulissen und sorgen rund ums Haus für den einen oder anderen Schreck. Feuerstellen, Musik, Licht, Animatronics und jede Menge schaurige Überraschungen machen Halloween bei uns zu einem ganz besonderen Abend.</p>
+      <p class="muted">Auch für das leibliche Wohl ist gesorgt: Für die kleinen Besucher gibt es kostenlose Naschtüten, und auf unseren Grills warten über 450 Bratwürste, die wir ebenfalls kostenlos an unsere Besucher ausgeben.</p>
+      <p class="muted">Das gesamte Erlebnis ist kostenlos. Wer unser Familienprojekt unterstützen möchte, kann dies gerne mit einer freiwilligen Spende tun. Die Spenden fließen zurück ins Rödentaler Horrorhaus und helfen uns dabei, auch im nächsten Jahr wieder neue Ideen und Kulissen zum Leben zu erwecken.</p>
+      <p class="muted">Der Rundgang führt über den öffentlichen Gehweg rund um unser Haus. Das Grundstück selbst wird von Besuchern nicht betreten.</p>
+      <p class="type" style="color:var(--slime); font-size:1.05rem; letter-spacing:.04em; margin-bottom:0">Von uns für euch. Weil Halloween gemeinsam einfach mehr Spaß macht.</p>
+    </div>
 
     <div class="notice rv">
       <div class="notice__h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 1.5 21h21z"/><path d="M12 10v5M12 18h.01"/></svg>Wetter</div>
-      <p class="muted">Bei Sturm oder Dauerregen kann kurzfristig geschlossen bleiben — die Technik im Garten ist nicht wasserdicht. Ob geöffnet ist, steht immer zuerst auf <a href="https://www.instagram.com/roedentaler_horrorhaus/" rel="noopener">Instagram</a>.</p>
+      <p class="muted">Da unser Horrorhaus unter freiem Himmel stattfindet, können Programm und Umfang am Halloween-Abend wetterbedingt kurzfristig angepasst werden. Aktuelle Infos gibt es immer zuerst auf <a href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Instagram</a>.</p>
     </div>
   </div>
 </section>
@@ -686,10 +681,11 @@ p{margin:0 0 1.15em; max-width:68ch}
       <div class="panel rv">
         <h3 class="h3">Gut zu wissen</h3>
         <ul class="list">
-          <li>Der Eintritt kostet nichts. Vor der Einfahrt steht eine Spendenbox.</li>
+          <li>Das gesamte Erlebnis ist kostenlos. Wer mag, gibt eine freiwillige Spende — das Geld fließt zurück ins Horrorhaus.</li>
           <li>Der Rundgang dauert zehn bis zwanzig Minuten, je nachdem wie oft du stehen bleibst.</li>
           <li>Geparkt wird auf der Straße. Aus dem Ortskern bist du in wenigen Minuten zu Fuß da.</li>
-          <li>Der Weg durch den Garten ist eben, aber unbefestigt. Mit Rollstuhl oder Kinderwagen geht es, kann aber eng werden.</li>
+          <li>An Halloween gibt es kostenlose Naschtüten für die Kleinen und Bratwürste vom Grill.</li>
+          <li>Der Rundgang führt über den öffentlichen Gehweg. Das Grundstück selbst wird nicht betreten.</li>
           <li>Hunde bitte zu Hause lassen — zu laut, zu viel Nebel, zu viele Leute.</li>
           <li>Zieh dich warm an. Im Oktober steht man länger draußen, als man denkt.</li>
           <li>Fotografieren ist erlaubt und ausdrücklich erwünscht.</li>
@@ -700,8 +696,9 @@ p{margin:0 0 1.15em; max-width:68ch}
         <ul class="list">
           <li>Es gibt Schreckmomente und laute Geräusche. Nicht jeder findet das lustig.</li>
           <li>Für kleine Kinder nur in Begleitung — und lieber in der frühen Zeitschiene.</li>
-          <li>Wer empfindlich auf blinkendes Licht reagiert, sollte den hinteren Gartenbereich meiden.</li>
+          <li>Entlang der Strecke gibt es Lichteffekte. Wer empfindlich auf blinkendes Licht reagiert, sollte das mitbedenken.</li>
           <li>Nichts anfassen, nichts mitnehmen. Vieles ist selbst gebaut und geht schnell kaputt.</li>
+          <li>Bitte nicht auf das Grundstück gehen. Der Rundgang bleibt auf dem Gehweg.</li>
           <li>Bitte die Einfahrten der Nachbarn frei lassen und leise sein, wenn du gehst.</li>
           <li>Keine offenen Flammen, keine Böller, kein Alkohol auf dem Grundstück.</li>
         </ul>
@@ -757,10 +754,11 @@ p{margin:0 0 1.15em; max-width:68ch}
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">Presse</p>
-      <h2 class="h2">Darüber wurde<br>geschrieben</h2>
+      <h2 class="h2">Darüber wurde<br>berichtet</h2>
       <div class="press">
-        <span class="press__n">Neue Presse Coburg</span>
-        <span class="press__n">Fränkischer Tag</span>
+        <a class="press__n" href="https://www.np-coburg.de/inhalt.halloween-in-roedental-das-horrorhaus-und-ein-schaurig-schoener-garten.25ced17f-5a2b-4c61-93bc-2f26ac017221.html" target="_blank" rel="noopener">Neue Presse Coburg</a>
+        <a class="press__n" href="https://www.fraenkischertag.de/lokales/landkreis-coburg/kultur-freizeit/halloween-haus-in-einberg-ein-familienprojekt-zum-gruseln-kostuem-art-485518" target="_blank" rel="noopener">Fränkischer Tag</a>
+        <a class="press__n" href="https://www.ardmediathek.de/video/frankenschau-aktuell/das-halloweenhaus-von-roedental/br/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNFdPMDEyMzk2QTAvc2VjdGlvbi84ZTdkODFhYS01NDkzLTQzNjEtOTAwNS05MWY1YWJjZDc2YjA" target="_blank" rel="noopener">BR Frankenschau</a>
       </div>
       <p class="type muted" style="margin-top:2rem; font-size:.9375rem; letter-spacing:.04em; max-width:46ch">Presseanfragen und Drehgenehmigungen bitte vorab über das Kontaktformular — spontan vor Ort geht im Trubel unter.</p>
     </div>
@@ -778,7 +776,7 @@ p{margin:0 0 1.15em; max-width:68ch}
     <div class="trio">
       <div class="card rv">
         <h3 class="h3">Spenden</h3>
-        <p>Vor der Einfahrt steht eine Box. Was reinkommt, geht komplett in Material für das nächste Jahr.</p>
+        <p>Das Erlebnis ist kostenlos. Wer mag, gibt eine freiwillige Spende. Das Geld fließt zurück ins Horrorhaus und hilft, im nächsten Jahr wieder neue Ideen und Kulissen zu bauen.</p>
         <a class="btn btn--ghost" href="#kontakt">Mehr dazu erfahren</a>
       </div>
       <div class="card rv">
@@ -799,10 +797,14 @@ p{margin:0 0 1.15em; max-width:68ch}
 <section class="section section--soil" id="instagram">
   <div class="wrap">
     <div class="rv" style="text-align:center">
-      <p class="eyebrow">Instagram</p>
+      <p class="eyebrow">Social Media</p>
       <a class="ig__handle" href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">@roedentaler_horrorhaus</a>
-      <p class="muted" style="margin:1.2rem auto 2rem; max-width:52ch">Alle aktuellen Termine, kurzfristige Absagen und der Aufbau live aus dem Garten. Wenn irgendwo zuerst steht, dass heute offen ist, dann dort.</p>
-      <a class="btn" href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Auf Instagram folgen</a>
+      <p class="muted" style="margin:1.2rem auto 2rem; max-width:52ch">Alle aktuellen Infos, kurzfristige Änderungen und der Aufbau live aus dem Garten. Wenn irgendwo zuerst steht, was heute läuft, dann dort.</p>
+      <div class="social">
+        <a class="btn" href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn--ghost" href="https://www.facebook.com/share/1coB5uWwTe/" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn btn--ghost" href="https://www.tiktok.com/@roedentaler_horror" target="_blank" rel="noopener">TikTok</a>
+      </div>
     </div>
     <div class="ig">
       <img class="ig__i" src="instagram-01.jpg" width="800" height="800" loading="lazy" alt="Instagram-Beitrag: Aufbau im Garten">
@@ -836,7 +838,13 @@ p{margin:0 0 1.15em; max-width:68ch}
         </select><span class="err"></span>
       </div>
       <div class="field field--full"><label for="f-msg">Nachricht</label><textarea id="f-msg"></textarea><span class="err" id="e-msg"></span></div>
-      <div class="field field--full"><button class="btn" type="button" id="send">Nachricht senden</button></div>
+      <div class="field field--full" style="position:absolute; left:-9999px" aria-hidden="true">
+        <label for="f-web">Website</label><input id="f-web" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="field field--full">
+        <button class="btn" type="button" id="send">Nachricht senden</button>
+        <p class="type muted" style="font-size:.75rem; letter-spacing:.05em; margin:1rem 0 0; max-width:52ch">Mit dem Absenden werden deine Angaben zur Bearbeitung der Anfrage verarbeitet. Näheres in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -862,6 +870,8 @@ p{margin:0 0 1.15em; max-width:68ch}
         <a href="datenschutz.html">Datenschutz</a>
         <a href="#kontakt">Kontakt</a>
         <a href="https://www.instagram.com/roedentaler_horrorhaus/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/share/1coB5uWwTe/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.tiktok.com/@roedentaler_horror" target="_blank" rel="noopener">TikTok</a>
       </nav>
     </div>
     <div class="foot__bar">
@@ -938,45 +948,6 @@ p{margin:0 0 1.15em; max-width:68ch}
     cNote.textContent = 'bis zur Halloween-Nacht am 31. Oktober ' + target.getFullYear();
   }
   tick(); setInterval(tick, 1000);
-
-  /* ============================================================
-     TERMINE  —  [[PLATZHALTER: Termine]]
-     Hier pflegen. Format: JJJJ-MM-TT. Reihenfolge egal, wird sortiert.
-     ============================================================ */
-  var TERMINE = [
-    { datum:'2026-10-23', zeit:'18:00 – 21:00 Uhr', titel:'Öffnungsabend',   hinweis:'Ruhigster Abend — gut mit kleineren Kindern.', highlight:false },
-    { datum:'2026-10-24', zeit:'18:00 – 21:00 Uhr', titel:'Öffnungsabend',   hinweis:'',                                              highlight:false },
-    { datum:'2026-10-30', zeit:'18:00 – 21:30 Uhr', titel:'Öffnungsabend',   hinweis:'Alle Effekte laufen, inklusive Nebel.',          highlight:false },
-    { datum:'2026-10-31', zeit:'18:00 – 22:00 Uhr', titel:'Halloween-Nacht', hinweis:'Die große Nacht. Familie Müller empfängt in Kostüm.', highlight:true }
-  ];
-
-  var WD = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
-  var MO = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
-  (function renderDates(){
-    var host = $('#dates');
-    var today = new Date(); today.setHours(0,0,0,0);
-    var items = TERMINE.map(function(t){
-      var p = t.datum.split('-');
-      var d = new Date(+p[0], +p[1]-1, +p[2]);
-      return {t:t, d:d, past: d < today};
-    });
-    var kommend = items.filter(function(i){return !i.past}).sort(function(a,b){return a.d-b.d});
-    var vorbei  = items.filter(function(i){return  i.past}).sort(function(a,b){return b.d-a.d});
-    var all = kommend.concat(vorbei);
-
-    host.innerHTML = all.map(function(i, idx){
-      var isNext = !i.past && idx === 0;
-      var hl = (!i.past && (isNext || i.t.highlight));
-      var tag = i.past ? 'Vorbei' : (isNext ? 'Als Nächstes' : (i.t.highlight ? 'Highlight' : 'Geöffnet'));
-      return '<article class="date rv' + (hl ? ' date--hl' : '') + (i.past ? ' date--past' : '') + '">' +
-        '<span class="date__tag">' + tag + '</span>' +
-        '<div class="date__d">' + i.d.getDate() + '. ' + MO[i.d.getMonth()] + '</div>' +
-        '<div class="date__wd">' + WD[i.d.getDay()] + ', ' + i.d.getFullYear() + '</div>' +
-        '<div class="date__t">' + i.t.zeit + '</div>' +
-        (i.t.hinweis ? '<p class="date__n">' + i.t.hinweis + '</p>' : '') +
-      '</article>';
-    }).join('');
-  })();
 
   /* ---------- Galerie ---------- */
   var BILDER = [
@@ -1089,12 +1060,12 @@ p{margin:0 0 1.15em; max-width:68ch}
 
   /* ---------- FAQ ---------- */
   var FAQ = [
-    ['Was kostet der Eintritt?','Nichts. Es ist ein privates Projekt, kein Geschäft. Vor der Einfahrt steht eine Spendenbox — was reinkommt, geht in Material fürs nächste Jahr.'],
+    ['Was kostet der Eintritt?','Nichts. Das gesamte Erlebnis ist kostenlos. Wer unser Familienprojekt unterstützen möchte, kann das gerne mit einer freiwilligen Spende tun. Die Spenden fließen zurück ins Horrorhaus und helfen uns, im nächsten Jahr wieder neue Ideen umzusetzen.'],
     ['Ab welchem Alter ist das geeignet?','Eine feste Grenze gibt es nicht. Ab etwa acht Jahren kommen die meisten gut damit klar. Jüngere Kinder bitte an die Hand nehmen und lieber gleich zu Beginn kommen, wenn noch nicht alle Effekte laufen.'],
-    ['Wie lange dauert der Rundgang?','Zehn bis zwanzig Minuten. Wer alles genau anschaut und fotografiert, braucht länger.'],
-    ['Muss ich mich anmelden?','Nein. Einfach kommen. An Halloween kann es an der Einfahrt kurz Wartezeit geben.'],
+    ['Wie lange dauert der Rundgang?','Zehn bis zwanzig Minuten. Wer alles genau anschaut und fotografiert, braucht länger. Der Weg führt über den Gehweg rund ums Haus.'],
+    ['Muss ich mich anmelden?','Nein. Einfach kommen. An Halloween ist am meisten los, dann wird es auf dem Gehweg auch mal voller.'],
     ['Darf ich fotografieren und filmen?','Ja, sehr gerne. Wir freuen uns über jeden Beitrag, in dem wir verlinkt werden. Bitte nur keine anderen Besucher ungefragt aufnehmen. Für Drehs mit Team bitte vorher kurz melden.'],
-    ['Findet es auch bei Regen statt?','Leichter Regen ist kein Problem. Bei Sturm oder Dauerregen bleibt zu, weil Technik und Figuren draußen stehen. Die Entscheidung fällt am selben Nachmittag und steht dann auf Instagram.'],
+    ['Findet es auch bei Regen statt?','Das Horrorhaus steht unter freiem Himmel. Leichter Regen ist kein Problem, bei Sturm oder Dauerregen können Programm und Umfang aber kurzfristig angepasst werden. Aktuelles steht immer zuerst auf Instagram.'],
     ['Kann ich mit einer Gruppe kommen?','Ja. Ab etwa zwölf Personen schreib uns bitte vorher kurz, dann verteilen wir euch auf einen ruhigeren Zeitpunkt.'],
     ['Darf ich verkleidet kommen?','Unbedingt. Nur bitte ohne täuschend echte Waffenattrappen — das gibt jedes Jahr Diskussionen an der Straße.']
   ];
@@ -1132,8 +1103,6 @@ p{margin:0 0 1.15em; max-width:68ch}
       });
     }, {rootMargin:'0px 0px -12% 0px', threshold:0.08});
     $$('.rv').forEach(function(el){ io.observe(el) });
-    var mo = new MutationObserver(function(){ $$('.rv:not(.is-in)').forEach(function(el){io.observe(el)}) });
-    mo.observe($('#dates'), {childList:true});
   } else {
     $$('.rv').forEach(function(el){ el.classList.add('is-in') });
   }
@@ -1185,7 +1154,16 @@ p{margin:0 0 1.15em; max-width:68ch}
     f.classList.remove('is-bad');
     var e = $('#e-'+id); if (e) e.textContent = '';
   }
-  $('#send').addEventListener('click', function(){
+  // ════════════════════════════════════════════════════════════
+  //  ZUGANGSSCHLÜSSEL FÜR DAS KONTAKTFORMULAR
+  //  Auf web3forms.com die Adresse mc83@web.de eintragen, den per Mail
+  //  zugeschickten Access Key hier zwischen die Anführungszeichen setzen.
+  //  Solange hier PLATZHALTER steht, öffnet sich ersatzweise das Mailprogramm.
+  // ════════════════════════════════════════════════════════════
+  var FORM_KEY = 'PLATZHALTER-ACCESS-KEY';
+
+  var sendBtn = $('#send');
+  sendBtn.addEventListener('click', function(){
     var name = $('#f-name').value.trim();
     var mail = $('#f-mail').value.trim();
     var msg  = $('#f-msg').value.trim();
@@ -1196,13 +1174,40 @@ p{margin:0 0 1.15em; max-width:68ch}
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) ok = bad('mail','Diese E-Mail-Adresse stimmt nicht.');
     if (msg.length < 10) ok = bad('msg','Bitte schreib uns ein paar Sätze mehr.');
     if (!ok){ say('Bitte prüf die markierten Felder.'); return; }
+    if ($('#f-web').value){ return; }
 
-    // TODO Livegang: hier den echten Formular-Endpunkt anbinden (z. B. Formspree, Web3Forms
-    // oder eine eigene Funktion). Bis dahin öffnet sich das E-Mail-Programm.
-    var to = 'mc83@web.de';
-    var body = 'Name: ' + name + '\nE-Mail: ' + mail + '\nThema: ' + topic + '\n\n' + msg;
-    window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('[' + topic + '] Anfrage über die Website') + '&body=' + encodeURIComponent(body);
-    say('Dein E-Mail-Programm öffnet sich.');
+    if (FORM_KEY.indexOf('PLATZHALTER') === 0){
+      var body = 'Name: ' + name + '\nE-Mail: ' + mail + '\nThema: ' + topic + '\n\n' + msg;
+      window.location.href = 'mailto:mc83@web.de?subject=' + encodeURIComponent('[' + topic + '] Anfrage über die Website') + '&body=' + encodeURIComponent(body);
+      say('Dein E-Mail-Programm öffnet sich.');
+      return;
+    }
+
+    var label = sendBtn.textContent;
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Wird gesendet…';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify({
+        access_key: FORM_KEY,
+        subject: '[' + topic + '] Anfrage über die Website',
+        from_name: 'Rödentaler Horrorhaus',
+        name: name, email: mail, thema: topic, message: msg
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d && d.success){
+        $('#f-name').value = ''; $('#f-mail').value = ''; $('#f-msg').value = '';
+        say('Danke, deine Nachricht ist raus.');
+      } else {
+        say('Das hat nicht geklappt. Schreib uns bitte an mc83@web.de.');
+      }
+    })
+    .catch(function(){ say('Keine Verbindung. Schreib uns bitte an mc83@web.de.'); })
+    .then(function(){ sendBtn.disabled = false; sendBtn.textContent = label; });
   });
 })();
 </script>
