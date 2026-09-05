@@ -206,7 +206,7 @@ p{margin:0 0 1.15em; max-width:68ch}
 .nav__inner{max-width:var(--maxw); margin-inline:auto; padding:.85rem var(--pad); display:flex; align-items:center; gap:1.5rem}
 .nav__brand{font-family:var(--f-display); color:var(--slime); font-size:.95rem; letter-spacing:.01em; line-height:1.2; flex:0 0 auto}
 .nav__brand:hover{text-decoration:none}
-.nav__links{display:flex; gap:1.5rem; margin-left:auto; align-items:center}
+.nav__links{display:flex; gap:clamp(.85rem,1.6vw,1.5rem); margin-left:auto; align-items:center}
 .nav__links a{
   font-family:var(--f-head); text-transform:uppercase; font-size:.8125rem;
   letter-spacing:.08em; color:var(--bone); position:relative; padding-block:.3rem;
@@ -226,7 +226,7 @@ p{margin:0 0 1.15em; max-width:68ch}
 .nav__panel .btn{margin-top:1rem; color:#000}
 .skip{position:absolute; left:-9999px; top:0; z-index:10000; background:var(--slime); color:#000; padding:.8rem 1.2rem; font-family:var(--f-head)}
 .skip:focus{left:.5rem; top:.5rem}
-@media (max-width:900px){
+@media (max-width:1050px){
   .nav__links{display:none}
   .nav>.nav__inner>.btn{display:none}
   .nav__burger{display:block}
@@ -486,6 +486,7 @@ p{margin:0 0 1.15em; max-width:68ch}
       <a href="#infos">Besucherinfos</a>
       <a href="#anfahrt">Anfahrt</a>
       <a href="#faq">FAQ</a>
+      <a href="#presse">Presse</a>
     </nav>
     <a class="btn" href="#termine">Traust du dich?</a>
     <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="navpanel">Menü</button>
@@ -498,6 +499,7 @@ p{margin:0 0 1.15em; max-width:68ch}
   <a href="#infos">Besucherinfos</a>
   <a href="#anfahrt">Anfahrt</a>
   <a href="#faq">FAQ</a>
+  <a href="#presse">Presse</a>
   <a class="btn" href="#termine">Traust du dich?</a>
 </div>
 
@@ -864,6 +866,7 @@ p{margin:0 0 1.15em; max-width:68ch}
         <a href="#galerie">Galerie</a>
         <a href="#infos">Besucherinfos</a>
         <a href="#anfahrt">Anfahrt</a>
+        <a href="#presse">Presse</a>
       </nav>
       <nav class="foot__nav" aria-label="Rechtliches">
         <a href="impressum.html">Impressum</a>
@@ -1156,11 +1159,11 @@ p{margin:0 0 1.15em; max-width:68ch}
   }
   // ════════════════════════════════════════════════════════════
   //  ZUGANGSSCHLÜSSEL FÜR DAS KONTAKTFORMULAR
-  //  Auf web3forms.com die Adresse mc83@web.de eintragen, den per Mail
-  //  zugeschickten Access Key hier zwischen die Anführungszeichen setzen.
-  //  Solange hier PLATZHALTER steht, öffnet sich ersatzweise das Mailprogramm.
+  //  Der Schlüssel gehört zum Web3Forms-Konto von mc83@web.de. Nachrichten
+  //  gehen direkt von der Seite an diese Adresse. Falls der Dienst einmal
+  //  ausfällt, bekommt der Besucher einen Hinweis mit der E-Mail-Adresse.
   // ════════════════════════════════════════════════════════════
-  var FORM_KEY = 'PLATZHALTER-ACCESS-KEY';
+  var FORM_KEY = '95a76d78-57f1-4ba9-8077-09ac8dccb087';
 
   var sendBtn = $('#send');
   sendBtn.addEventListener('click', function(){
